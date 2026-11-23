@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { LuArrowUpRight, LuCircleAlert, LuCircleDashed, LuLock, LuX } from 'react-icons/lu';
 import { intlLocale, t } from '../i18n/index.js';
 import { CURRENCIES, BASE_CURRENCY, fromMinor } from '../../../shared/finance.js';
@@ -104,7 +105,9 @@ export function Modal({ title, onClose, children, width = 480 }) {
     window.addEventListener('keydown', onKey, true);
     return () => { window.removeEventListener('keydown', onKey, true); prev?.focus?.(); };
   }, [onClose]);
-  return (
+  // Rendered at <body> level: a glass card (backdrop-filter) would otherwise trap the fixed
+  // backdrop inside it and the top bar could cover the dialog's close button.
+  return createPortal(
     <div className="modal-backdrop" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
       <div className="card modal" role="dialog" aria-modal="true" aria-label={title} ref={ref} style={{ width: `min(${width}px, 100%)` }}>
         <header className="card-head">
@@ -113,7 +116,8 @@ export function Modal({ title, onClose, children, width = 480 }) {
         </header>
         <div className="card-pad">{children}</div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 

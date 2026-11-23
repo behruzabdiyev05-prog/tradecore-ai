@@ -94,7 +94,8 @@ async function walk(dir) {
   }
 }
 await walk(new URL('src/', root));
-const dynamic = /^(mp\.(tab|status|sup|col|vat)\.|time\.|srv\.|notif\.|mw\.tab\.|finance\.group\.|plan\.status\.|search\.group\.|orgpage\.|onboarding\.|ares\.ex\.|team\.status\.|auth\.|file\.|mw\.status\.|mfa\.(code_wrong|no_factor|code_needed)|password\.|db\.|storage\.|nav\.|settings\.|shortcuts\.)/;
+// Phase 3 screens build many keys from a module key or a value (op.<module>.<field>, lf.seg.<segment>, …)
+const dynamic = /^(mp\.(tab|status|sup|col|vat)\.|op\.|dl\.|lf\.(tab|a|offer\.intro|fu|size|seg|svc|stage)\.|ft\.(tab|market|reading|reading_explain)\.|ft\.risk\.(long|short)$|time\.|srv\.|notif\.|mw\.tab\.|finance\.group\.|plan\.status\.|search\.group\.|orgpage\.|onboarding\.|ares\.ex\.|team\.status\.|auth\.|file\.|mw\.status\.|mfa\.(code_wrong|no_factor|code_needed)|password\.|db\.|storage\.|nav\.|settings\.|shortcuts\.)/;
 const KEPT = ['invite.success', 'invite.continue'];   // Phase 2A keys, kept so 2A code paths stay valid
 const unused = azKeys.filter((k) => !used.has(k) && !dynamic.test(k) && !KEPT.includes(k));
 

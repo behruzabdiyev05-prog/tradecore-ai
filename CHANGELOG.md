@@ -1,5 +1,25 @@
 # Changelog
 
+## [Unreleased] — 2026-11-23 · Phase 3: qalan 9 modul (budaq `i4-marketplace`; əsas sayta təsdiqdən sonra)
+
+### Əlavə edildi
+- **Miqrasiyalar 0018–0022** (+ geri qaytarma): `opportunities`, `trade_documents` + sətirlər + `trade_document_post()`, `leads` + `lead_activities`, `trading_*` (4 cədvəl, xəbərdarlıq trigger-i), `supplier_offers.min_order_qty`. Ətraflı: `docs/PHASE3_MODULES.md`.
+- **Modullar:** 01 Məhsul Araşdırması, 04 Arbitraj, 05 İdxal/İxrac, 07 İşlənmiş mallar, 08 Rəqəmsal məhsullar (ortaq fürsət ekranları); 02 Topdan, 06 B2B ticarət (ortaq sənəd ekranları); 09 B2B Müştəri Axtarışı; 10 Maliyyə Ticarəti.
+- `shared/modules/{opportunity,documents,leads,trading}.js` — ortaq hesablama.
+- Lüğət: ~570 yeni açar (AZ/EN/RU) + Phase 3 baza mesajları; bazadan gələn bildiriş növlərinin (Modul 03, ticarət xəbərdarlığı) adları.
+- `supabase/verify/modules_verify.sql` (11 yalnız oxuyan yoxlama).
+- Testlər: `tests/sql/modules_tests.sql` (81), `tests/sql/run_modules.sh`, `tests/unit/modules.test.js`, `tests/unit/stale-chunk.test.js`, `tests/e2e/modules-harness.mjs` (39) + `supabase-mock-p3.js`.
+
+### Dəyişdi
+- `Modal` artıq `<body>` səviyyəsində açılır (portal): şüşə kartın içində açılanda uzun pəncərənin "Bağla" düyməsi yuxarı panelin altında qalırdı — testlər bu xətanı tapdı.
+- Bütün modulların statusu "aktiv"; icmal kartı "Modulun istiqamətləri"; hər modulun icmalında ARES köməkçisi kartı.
+- `_shared/kit.jsx` — Modul 03-ün köməkçiləri ortaq yerə köçürüldü (`marketplace/ui.jsx` onları yenidən ixrac edir).
+- **Köhnə testdə 1 dəyişiklik** (`tests/e2e/harness.mjs`, "Unbuilt tab shows honest state"): yoxladığı "hələ hazırlanmayıb" yazısı Modul 09 qurulduğu üçün artıq yoxdur; yoxlama indi qurulmuş modulun öz ekranını göstərdiyini və bu yazının olmadığını təsdiqləyir. Başqa köhnə test dəyişməyib.
+
+### Testlər
+- SQL: Phase 1 ✔, 2A ✔, 2B ✔, İ-3 303/303, Phase 3 81/81, rollback dövrü `pg_dump` eyni.
+- Unit 74/74 · i18n 0 problem · E2E: 2A 70/70, 2B 54/54, İ-4 26/26, Phase 3 39/39.
+
 ## [Unreleased] — 2026-11-23 · İ-4: Modul 03 (Marketplace) ekranları (budaq `i4-marketplace`; əsas sayta təsdiqdən sonra)
 
 ### Əlavə edildi

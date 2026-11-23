@@ -34,7 +34,7 @@ export const MODULES = Object.freeze([
     icon: 'search',
     summary: 'Qlobal məhsul kəşfi, tələb və trend analizi.',
     finance: true,
-    status: 'planned',
+    status: 'active',
     features: [
       'Qlobal məhsul kəşfi',
       'Tələb analizi',
@@ -54,7 +54,7 @@ export const MODULES = Object.freeze([
     icon: 'boxes',
     summary: 'Topdan təchizatçılar, qiymətlər və alış idarəetməsi.',
     finance: true,
-    status: 'planned',
+    status: 'active',
     features: [
       'Topdan təchizatçı axtarışı',
       'Toplu məhsul qiymətləri',
@@ -73,7 +73,7 @@ export const MODULES = Object.freeze([
     icon: 'store',
     summary: 'Amazon, eBay, Shopify və digər platformalarda satış.',
     finance: true,
-    status: 'planned',
+    status: 'active',
     features: [
       'Amazon / eBay / Shopify',
       'Digər beynəlxalq marketplace-lər',
@@ -92,7 +92,7 @@ export const MODULES = Object.freeze([
     icon: 'arrows',
     summary: 'Ölkələr və platformalar arası qiymət fərqləri.',
     finance: true,
-    status: 'planned',
+    status: 'active',
     features: [
       'Beynəlxalq qiymət müqayisəsi',
       'Marketplace qiymət fərqləri',
@@ -111,7 +111,7 @@ export const MODULES = Object.freeze([
     icon: 'ship',
     summary: 'Beynəlxalq təchizat, gömrük və landed cost.',
     finance: true,
-    status: 'planned',
+    status: 'active',
     features: [
       'Beynəlxalq təchizatçı axtarışı',
       'İdxal imkanları',
@@ -132,7 +132,7 @@ export const MODULES = Object.freeze([
     icon: 'handshake',
     summary: 'Biznes müştəriləri, kataloqlar və kommersiya təklifləri.',
     finance: true,
-    status: 'planned',
+    status: 'active',
     features: [
       'Biznes müştəri araşdırması',
       'Topdan satışlar',
@@ -151,7 +151,7 @@ export const MODULES = Object.freeze([
     icon: 'recycle',
     summary: 'İkinci əl bazarı, vəziyyət, təmir və satış qiyməti.',
     finance: true,
-    status: 'planned',
+    status: 'active',
     features: [
       'İşlənmiş məhsul araşdırması',
       'İkinci əl bazar analizi',
@@ -170,7 +170,7 @@ export const MODULES = Object.freeze([
     icon: 'digital',
     summary: 'Rəqəmsal məhsullar, platformalar və satış izləmə.',
     finance: true,
-    status: 'planned',
+    status: 'active',
     features: [
       'Rəqəmsal məhsul araşdırması',
       'Rəqəmsal marketplace-lər',
@@ -189,7 +189,7 @@ export const MODULES = Object.freeze([
     icon: 'target',
     summary: 'Azərbaycanda poliqrafiya xidmətləri üçün potensial müştərilər.',
     finance: true,
-    status: 'planned',
+    status: 'active',
     features: [
       'Azərbaycanda şirkət axtarışı (şəhər, kateqoriya)',
       'Yeni yaradılmış bizneslər (etibarlı mənbə olduqda)',
@@ -210,7 +210,7 @@ export const MODULES = Object.freeze([
     summary: 'Kripto, Forex, səhmlər, qızıl — analiz və demo ticarət.',
     // Kept separate from physical-goods finance; uses its own portfolio ledger (Phase 3).
     finance: false,
-    status: 'planned',
+    status: 'active',
     features: [
       'Kripto (BTC, ETH), Forex, səhmlər, indekslər, qızıl, əmtəələr',
       'Canlı bazar məlumatı (mövcud olduqda)',

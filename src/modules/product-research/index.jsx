@@ -1,17 +1,13 @@
 /**
- * Module: product-research
- * Root component of this module. Module-specific screens, services and
- * data access live in this folder (e.g. ./sections, ./services, ./api).
- * Override standard workspace tabs via `sections` as features are built.
+ * Module: product-research — built on the shared opportunity screens (table `opportunities`).
+ * Fields used by this module are listed below; labels live in the dictionaries (op.product-research.*).
  */
-import ModuleWorkspace from '../_shared/ModuleWorkspace.jsx';
+import OpportunityModule from '../_shared/OpportunityModule.jsx';
 import { getModule } from '../../../shared/modules.js';
 
 const MODULE = getModule('product-research');
+const CFG = { key: 'product-research', fields: ['origin', 'target', 'buy', 'shipping', 'other', 'feePercent', 'feeFixed', 'sell'] };
 
-/** Tab overrides, e.g. { search: SearchSection }. Empty until Phase 3. */
-const sections = {};
-
-export default function ProductResearchModule() {
-  return <ModuleWorkspace module={MODULE} sections={sections} />;
+export default function Module() {
+  return <OpportunityModule module={MODULE} cfg={CFG} />;
 }

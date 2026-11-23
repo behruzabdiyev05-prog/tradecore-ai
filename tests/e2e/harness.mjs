@@ -170,8 +170,10 @@ async function main() {
   await page.locator('h1', { hasText: 'B2B Müştəri Axtarışı' }).waitFor();
   await page.waitForTimeout(800);
   await page.screenshot({ path: join(SHOTS, '04-module-b2b-client-finder.png') });
-  await page.getByRole('tab', { name: 'Axtarış və filtrlər' }).click();
-  check('Unbuilt tab shows honest state', await page.getByText('hələ hazırlanmayıb').isVisible());
+  // Phase 3: this module is built now, so the "not built yet" placeholder this check used is gone.
+  // Updated (documented in CHANGELOG): a built module must show its own screen, never the placeholder.
+  await page.getByRole('tab', { name: 'Potensial müştərilər' }).click();
+  check('Unbuilt tab shows honest state', await page.getByText('Hələ potensial müştəri yoxdur').isVisible() && !(await page.getByText('hələ hazırlanmayıb').count()));
 
   // 5. Module assistant → ARES (real function → 503 not configured)
   await page.getByRole('tab', { name: 'İcmal' }).click();

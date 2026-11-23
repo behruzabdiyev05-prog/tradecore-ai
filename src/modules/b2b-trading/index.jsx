@@ -1,17 +1,13 @@
 /**
- * Module: b2b-trading
- * Root component of this module. Module-specific screens, services and
- * data access live in this folder (e.g. ./sections, ./services, ./api).
- * Override standard workspace tabs via `sections` as features are built.
+ * Module: b2b-trading — built on the shared document screens (trade_documents + lines,
+ * central companies / products, posting to the central ledger).
  */
-import ModuleWorkspace from '../_shared/ModuleWorkspace.jsx';
+import DealsModule from '../_shared/DealsModule.jsx';
 import { getModule } from '../../../shared/modules.js';
 
 const MODULE = getModule('b2b-trading');
+const CFG = { key: 'b2b-trading', kinds: ['offer', 'sale', 'purchase'], roles: ['customer', 'supplier'], offers: false, calc: 'markup' };
 
-/** Tab overrides, e.g. { search: SearchSection }. Empty until Phase 3. */
-const sections = {};
-
-export default function B2BTradingModule() {
-  return <ModuleWorkspace module={MODULE} sections={sections} />;
+export default function Module() {
+  return <DealsModule module={MODULE} cfg={CFG} />;
 }

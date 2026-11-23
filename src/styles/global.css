@@ -732,3 +732,13 @@ table.table { width: 100%; border-collapse: collapse; font-size: 13px; }
   .topbar { gap: 6px; }
   .topbar .mode-toggle { display: none; }   /* also in Settings → Appearance */
 }
+
+/* ── Phase 3: printable documents (offers, invoices) ── */
+@media print {
+  body * { visibility: hidden !important; }
+  .print-area, .print-area * { visibility: visible !important; }
+  .print-area { position: absolute; inset: 0 auto auto 0; width: 100%; padding: 24px; color: #000; background: #fff; }
+  .print-area .table th, .print-area .table td { color: #000; }
+}
+.lf-offer-text { font-family: inherit; white-space: pre-wrap; line-height: 1.5; }
+.ft-chart text { font-family: inherit; }

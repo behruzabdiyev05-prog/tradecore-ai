@@ -1,17 +1,13 @@
 /**
- * Module: wholesale
- * Root component of this module. Module-specific screens, services and
- * data access live in this folder (e.g. ./sections, ./services, ./api).
- * Override standard workspace tabs via `sections` as features are built.
+ * Module: wholesale — built on the shared document screens (trade_documents + lines,
+ * central companies / products, posting to the central ledger).
  */
-import ModuleWorkspace from '../_shared/ModuleWorkspace.jsx';
+import DealsModule from '../_shared/DealsModule.jsx';
 import { getModule } from '../../../shared/modules.js';
 
 const MODULE = getModule('wholesale');
+const CFG = { key: 'wholesale', kinds: ['purchase', 'sale'], roles: ['supplier', 'customer'], offers: true, calc: 'bulk' };
 
-/** Tab overrides, e.g. { search: SearchSection }. Empty until Phase 3. */
-const sections = {};
-
-export default function WholesaleModule() {
-  return <ModuleWorkspace module={MODULE} sections={sections} />;
+export default function Module() {
+  return <DealsModule module={MODULE} cfg={CFG} />;
 }
