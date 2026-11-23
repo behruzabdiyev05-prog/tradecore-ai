@@ -74,18 +74,27 @@ function NotBuilt({ label }) {
   );
 }
 
-export default function ModuleWorkspace({ module, sections = {} }) {
-  const [tab, setTab] = useState('overview');
+/**
+ * `tabs` (optional) replaces the standard tab list for a module that has its own screens;
+ * `sectionProps` are passed to every custom section (keep `sections` stable component references).
+ */
+export default function ModuleWorkspace({ module, sections = {}, tabs = STANDARD_TABS, sectionProps = {} }) {
+  // notification links open a tab directly: /m/<module>?tab=<id>
+  const initialTab = () => {
+    const q = typeof window === 'undefined' ? null : new URLSearchParams(window.location.search).get('tab');
+    return tabs.some((x) => x.id === q) ? q : 'overview';
+  };
+  const [tab, setTab] = useState(initialTab);
   const { openAres } = useAres();
   const status = STATUS_LABEL[module.status] ?? STATUS_LABEL.planned;
   const name = tModule(module, 'name');
   const shortName = tModule(module, 'shortName');
 
-  useEffect(() => setTab('overview'), [module.key]);
+  useEffect(() => setTab(initialTab()), [module.key]);   // eslint-disable-line react-hooks/exhaustive-deps
 
   const Custom = sections[tab];
   let body;
-  if (Custom) body = <Custom module={module} />;
+  if (Custom) body = <Custom module={module} goTo={setTab} {...sectionProps} />;
   else if (tab === 'overview') {
     body = (
       <div className="grid grid-2">
@@ -124,7 +133,7 @@ export default function ModuleWorkspace({ module, sections = {} }) {
         </EmptyState>
       </Card>
     );
-  } else body = <NotBuilt label={STANDARD_TABS.find((t) => t.id === tab)?.label} />;
+  } else body = <NotBuilt label={tabs.find((t) => t.id === tab)?.label} />;
 
   return (
     <>
@@ -142,7 +151,7 @@ export default function ModuleWorkspace({ module, sections = {} }) {
         </div>
       </div>
       <div className="tabs" role="tablist">
-        {STANDARD_TABS.map((t) => (
+        {tabs.map((t) => (
           <button key={t.id} role="tab" className="tab" aria-selected={tab === t.id} onClick={() => setTab(t.id)}>{t.label}</button>
         ))}
       </div>

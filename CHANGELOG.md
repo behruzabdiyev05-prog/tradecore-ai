@@ -1,5 +1,26 @@
 # Changelog
 
+## [Unreleased] — 2026-11-23 · İ-4: Modul 03 (Marketplace) ekranları (budaq `i4-marketplace`; əsas sayta təsdiqdən sonra)
+
+### Əlavə edildi
+- **Modul 03 öz tabları ilə:** İcmal, Məhsullar, Sifarişlər, Təchizatçılar, Kalkulyator, Mağaza və parametrlər (+ ümumi Maliyyə və AI).
+- **Məhsullar:** əl ilə məhsul (mərkəzi `products` + `marketplace_listings`), axtarış, status və "stok azdır" filtri, mənfəət/marja sütunları, redaktə, tarixçə, silmə — sifarişi olan məhsul silinmir, "Qaralama" təklif olunur (D6). Shopify məhsulunda satış qiyməti və stok kilidlidir (D1).
+- **Sifarişlər:** əl ilə sifariş yalnız `marketplace_create_manual_order()` ilə (D4 atomik stok, D7 unikal nömrə), status, izləmə, təchizatçı sifarişi/ödənişi, arxiv (D2), yalnız əl ilə sifarişi silmək, tarixçə, mənfəət.
+- **Təchizatçılar:** təkliflər (valyuta + istifadəçinin yazdığı məzənnə), ən ucuz işarəsi, əsas təchizatçı, qiymət tarixçəsi.
+- **Kalkulyator:** bir ədəd üçün mənfəət, marja, ROI, zərərsiz qiymət, istənilən marja üçün qiymət; ƏDV "təxmini" nişanı ilə (D5, `shared/marketplace/vat.js`); daxil edilənlər istifadəçi üçün `marketplace_calc_prefs`-də saxlanılır.
+- **Mağaza və parametrlər:** ödəniş komissiyası, sabit komissiya, az stok həddi (`integrations.manage`); Shopify vəziyyəti (Y7).
+- `shared/marketplace/calc.js` — qəpiklə hesablama (UI, ARES və testlər üçün ümumi).
+- Bildiriş linkləri (`/m/marketplace?tab=…`) birbaşa uyğun tabı açır.
+- Lüğət: 248 yeni açar (AZ/EN/RU) + İ-3-ün 31 baza mesajının EN/RU tərcüməsi; dəyər daxil olan mesajlar ("… : 3", "… {n} …") da tərcümə olunur.
+- **Testlər:** `tests/unit/marketplace.test.js` (8), `tests/e2e/marketplace-harness.mjs` (26 brauzer yoxlaması) + `tests/e2e/supabase-mock-mp.js`.
+
+### Dəyişdi
+- `ModuleWorkspace`: istəyə bağlı `tabs` və `sectionProps` (digər modullar dəyişməyib).
+- i18n audit: dəyərli baza mesajları və dinamik `mp.*` açarları tanınır.
+
+### Testlər
+- Unit 64/64 · i18n 0 problem · E2E: 2A 70/70, 2B 54/54, İ-4 26/26 · SQL dəyişməyib (İ-3 303/303).
+
 ## [Unreleased] — 2026-11-21 · İ-3: Modul 03 (Marketplace / DropPilot) — miqrasiyalar, RLS, təhlükəsizlik (yalnız lokal; Supabase-ə tətbiq edilməyib, deploy edilməyib)
 
 ### Əlavə edildi

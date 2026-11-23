@@ -62,7 +62,9 @@ for (const f of (await readdir(new URL('supabase/migrations/', root))).filter((x
   for (const m of sql.matchAll(/(?:_deny\('|raise exception ')([^'%]+?)(?:'|\s*%)/g)) raised.add(m[1].trim().replace(/:$/, ''));
 }
 const srv = new Set(Object.entries(az).filter(([k]) => k.startsWith('srv.')).map(([, v]) => v));
-for (const msg of raised) if (!srv.has(msg) && !/^audit_log|^org_id|^Başqa şirkətin|^Planın|^Naməlum rol$/.test(msg)) notes.push(`database message without translation: "${msg}"`);
+// a message with a value inside (e.g. "… {n} …") is covered by a template whose fixed start matches
+const srvTemplates = [...srv].filter((v) => v.includes('{'));
+for (const msg of raised) if (!srv.has(msg) && !srvTemplates.some((v) => v.startsWith(msg)) && !/^audit_log|^org_id|^Başqa şirkətin|^Planın|^Naməlum rol$/.test(msg)) notes.push(`database message without translation: "${msg}"`);
 
 // 4b. server (Netlify) messages shown to the user: every one has an srv.* entry
 const serverMsgs = new Set();
@@ -92,7 +94,7 @@ async function walk(dir) {
   }
 }
 await walk(new URL('src/', root));
-const dynamic = /^(time\.|srv\.|notif\.|mw\.tab\.|finance\.group\.|plan\.status\.|search\.group\.|orgpage\.|onboarding\.|ares\.ex\.|team\.status\.|auth\.|file\.|mw\.status\.|mfa\.(code_wrong|no_factor|code_needed)|password\.|db\.|storage\.|nav\.|settings\.|shortcuts\.)/;
+const dynamic = /^(mp\.(tab|status|sup|col|vat)\.|time\.|srv\.|notif\.|mw\.tab\.|finance\.group\.|plan\.status\.|search\.group\.|orgpage\.|onboarding\.|ares\.ex\.|team\.status\.|auth\.|file\.|mw\.status\.|mfa\.(code_wrong|no_factor|code_needed)|password\.|db\.|storage\.|nav\.|settings\.|shortcuts\.)/;
 const KEPT = ['invite.success', 'invite.continue'];   // Phase 2A keys, kept so 2A code paths stay valid
 const unused = azKeys.filter((k) => !used.has(k) && !dynamic.test(k) && !KEPT.includes(k));
 

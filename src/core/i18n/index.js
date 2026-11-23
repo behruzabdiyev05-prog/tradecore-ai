@@ -104,8 +104,21 @@ export function tServerError(message) {
   if (/violates check constraint/i.test(message)) return t('srv.check_failed');
   if (/permission denied|row-level security/i.test(message)) return t('srv.permission_denied');
   if (current === 'az') return message;
-  const key = Object.keys(dictionaries.az).find((k) => k.startsWith('srv.') && dictionaries.az[k] === message);
-  return key ? t(key) : message;
+  const srvKeys = Object.keys(dictionaries.az).filter((k) => k.startsWith('srv.'));
+  const key = srvKeys.find((k) => dictionaries.az[k] === message);
+  if (key) return t(key);
+  // a message with values inside: "Bu məhsulun 3 sifariş sətri var. …" ↔ "… {n} …"
+  for (const k of srvKeys) {
+    const tpl = dictionaries.az[k];
+    if (!tpl.includes('{')) continue;
+    const names = [];
+    const re = new RegExp(`^${tpl.replace(/[.*+?^$()|[\]\\]/g, '\\$&').replace(/\\?\{(\w+)\\?\}/g, (_, n) => { names.push(n); return '(.+?)'; })}$`);
+    const m = message.match(re);
+    if (m) return t(k, Object.fromEntries(names.map((n, i) => [n, m[i + 1]])));
+  }
+  // a fixed start followed by a value: "Stok kifayət etmir. Mövcud stok: 3"
+  const prefix = srvKeys.find((k) => message.startsWith(`${dictionaries.az[k]}:`));
+  return prefix ? t(prefix) + message.slice(dictionaries.az[prefix].length) : message;
 }
 
 export function formatDateTime(value) {

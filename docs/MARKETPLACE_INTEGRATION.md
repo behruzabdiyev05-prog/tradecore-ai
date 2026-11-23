@@ -2,7 +2,7 @@
 
 DropPilot TRADECORE-un daxilində Modul 03 (Marketplace Trading) kimi qurulur. Arxitektura və verilənlər bazası dizaynı təsdiqlənib (İ-1, İ-2, 2026-11-21). Bu fayl hər mərhələdə dəyişənləri və DropPilot-dan fərqləri qeyd edir.
 
-**Mərhələ vəziyyəti:** İ-1 ✔ · İ-2 ✔ · **İ-3 hazırdır, təsdiq gözləyir** · İ-4…İ-7 başlanmayıb.
+**Mərhələ vəziyyəti:** İ-1 ✔ · İ-2 ✔ · İ-3 ✔ (real test layihəsinə tətbiq edilib) · **İ-4 hazırdır, təsdiq gözləyir** · İ-5…İ-7 başlanmayıb.
 
 Qorunan qaydalar: DropPilot-un canlı Supabase layihəsinə, canlı NovaNest Shopify mağazasına, Netlify-a və production verilənlər bazasına toxunulmur. Köhnə miqrasiyalar, rollback-lər və testlər dəyişmir.
 
@@ -96,3 +96,18 @@ Skript yalnız müvəqqəti qovluqdakı Unix soketi ilə lokal PostgreSQL-ə qo�
 ### Növbəti mərhələdən əvvəl
 - Real `tradecore-test` layihəsində 0013–0017-nin tətbiqi və `marketplace_verify.sql` — Phase 2B real testi tamamlandıqdan sonra, ayrıca icazə ilə.
 - İ-4 (React komponentləri) yalnız ayrıca təsdiqdən sonra başlayır.
+
+---
+
+## İ-4 · React ekranları
+
+| Fayl | Təyinat |
+|---|---|
+| `src/modules/marketplace/index.jsx` | Modulun tabları; parametrlər bir dəfə yüklənir və ekranlara ötürülür |
+| `src/modules/marketplace/api.js` | Bütün Modul 03 sorğuları (RLS və SQL funksiyaları əsl qaydadır) |
+| `Overview.jsx`, `Products.jsx`, `Orders.jsx`, `Suppliers.jsx`, `Calculator.jsx`, `Settings.jsx`, `History.jsx`, `ui.jsx` | Ekranlar |
+| `shared/marketplace/calc.js`, `shared/marketplace/vat.js` | Mənfəət riyaziyyatı, təxmini ƏDV cədvəli (D5) |
+
+**Hesablama qaydaları** (`calc.js`): məbləğlər qəpiklə tam ədəddir; komissiya = satış × % + sabit; ƏDV qiymətin içindədir; sifariş sətri mənfəəti = satış + çatdırılma gəliri − endirim − komissiya − geri qaytarma − maya dəyəri (vergi gəlir sayılmır, məbləğlər sətir cəmidir).
+
+**Bilinən məhdudiyyətlər:** variantlı (Shopify) məhsullar əl ilə sifarişdə hələ seçilmir; əl ilə sifariş silinəndə stok geri qaytarılmır (istifadəçiyə deyilir); məzənnəni istifadəçi yazır (avtomatik məzənnə İ-7/Phase 7).
