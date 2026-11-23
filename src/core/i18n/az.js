@@ -37,6 +37,7 @@ export default {
   'db.not_configured': 'Verilənlər bazası konfiqurasiya olunmayıb (Supabase).',
   'setup.title': 'Konfiqurasiya tələb olunur',
   'setup.body': 'Supabase bağlantısı təyin edilməyib. Platforma saxta məlumatla işləmir — davam etmək üçün verilənlər bazasını qoşun.',
+  'setup.url_invalid': 'VITE_SUPABASE_URL dəyəri düzgün link deyil. Ora https:// ilə başlayan Supabase layihə linkini yazın, sonra saytı yenidən deploy edin.',
   'setup.env.before': 'Lokal inkişaf üçün',
   'setup.env.after': 'faylına, Netlify-da isə Site settings → Environment variables bölməsinə əlavə edin:',
   'setup.migrations.before': 'Sonra',

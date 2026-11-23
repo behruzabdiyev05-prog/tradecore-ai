@@ -1,6 +1,7 @@
 import { Brand } from '../layout/Sidebar.jsx';
 import { Notice } from '../core/ui/components.jsx';
 import { t } from '../core/i18n/index.js';
+import { supabaseUrlInvalid } from '../core/config/env.js';
 
 /** Shown when Supabase public config is missing — the app never runs on fake data. */
 export default function SetupRequiredPage() {
@@ -10,6 +11,7 @@ export default function SetupRequiredPage() {
         <Brand />
         <h1 style={{ fontSize: 20 }}>{t('setup.title')}</h1>
         <Notice>{t('setup.body')}</Notice>
+        {supabaseUrlInvalid && <Notice tone="error">{t('setup.url_invalid')}</Notice>}
         <p className="muted">{t('setup.env.before')} <code>.env</code> {t('setup.env.after')}</p>
         <div className="code">{`VITE_SUPABASE_URL=https://<project-ref>.supabase.co
 VITE_SUPABASE_ANON_KEY=<public-anon-key>

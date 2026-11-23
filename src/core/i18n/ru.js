@@ -32,6 +32,7 @@ export default {
   "db.not_configured": "База данных не настроена (Supabase).",
   "setup.title": "Требуется настройка",
   "setup.body": "Подключение к Supabase не задано. Платформа не работает на выдуманных данных — подключите базу данных, чтобы продолжить.",
+  "setup.url_invalid": "Значение VITE_SUPABASE_URL не является корректной ссылкой. Укажите адрес проекта Supabase, начинающийся с https://, затем повторите деплой сайта.",
   "setup.env.before": "Для локальной разработки добавьте в файл",
   "setup.env.after": ", а в Netlify — в Site settings → Environment variables:",
   "setup.migrations.before": "Затем по порядку выполните SQL-файлы из папки",
