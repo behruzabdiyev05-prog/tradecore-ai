@@ -3,6 +3,7 @@
  * loaded only when opened. Keys must match shared/modules.js (unit-tested).
  */
 import { lazy } from 'react';
+import { withReload } from '../core/ui/staleChunk.js';
 
 export const MODULE_LOADERS = {
   'product-research': () => import('./product-research/index.jsx'),
@@ -21,6 +22,6 @@ const cache = new Map();
 
 export function getModuleComponent(key) {
   if (!MODULE_LOADERS[key]) return null;
-  if (!cache.has(key)) cache.set(key, lazy(MODULE_LOADERS[key]));
+  if (!cache.has(key)) cache.set(key, lazy(() => withReload(MODULE_LOADERS[key])));   // new deploy → reload once
   return cache.get(key);
 }
