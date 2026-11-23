@@ -1,0 +1,532 @@
+NOTICE:  database "t" does not exist, skipping
+→ migrate 20261121000100_core.sql
+→ migrate 20261121000200_shared_data.sql
+→ migrate 20261121000300_finance.sql
+→ migrate 20261121000400_ares_integrations.sql
+── Phase 1 tests
+              set_config              
+--------------------------------------
+ 11111111-1111-1111-1111-111111111111
+(1 row)
+
+              set_config              
+--------------------------------------
+ 22222222-2222-2222-2222-222222222222
+(1 row)
+
+        result        
+----------------------
+ ALL SQL TESTS PASSED
+(1 row)
+
+── Phase 2A tenancy tests
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ #  | result |                        name                         |                                                                     detail                                                                      
+----+--------+-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------
+  0 | FAIL   | setup: signup creates organizations                 | column "active_org_id" does not exist
+  0 | FAIL   | setup: team via invites                             | function public.create_invite(uuid, text, text) does not exist
+  0 | PASS   | setup: business rows in A and B                     | 
+  1 | FAIL   | A cannot read B: companies                          | visible=-1
+  1 | FAIL   | A cannot read B: products                           | visible=-1
+  1 | FAIL   | A cannot read B: saved_items                        | visible=-1
+  1 | FAIL   | A cannot read B: module_events                      | visible=-1
+  1 | FAIL   | A cannot read B: activity_log                       | visible=-1
+  1 | FAIL   | A cannot read B: financial_transactions             | visible=-1
+  1 | FAIL   | A cannot read B: exchange_rates                     | visible=-1
+  1 | FAIL   | A cannot read B: ares_conversations                 | visible=-1
+  1 | FAIL   | A cannot read B: ares_messages                      | visible=-1
+  1 | FAIL   | A cannot read B: integrations                       | visible=-1
+  1 | FAIL   | A cannot read B: finance_module_summary             | visible=-1
+  1 | PASS   | A sees own rows (sanity)                            | visible=1
+  1 | FAIL   | coverage: every table with user_id has org_id + RLS | 
+  2 | FAIL   | insert companies into B                             | wrong error 42703: column "org_id" of relation "companies" does not exist
+  2 | FAIL   | insert transaction into B                           | wrong error 42703: column "org_id" of relation "financial_transactions" does not exist
+  3 | FAIL   | move company A→B                                    | wrong error 42703: column "org_id" of relation "companies" does not exist
+  4 | FAIL   | A cannot update B: companies                        | affected=-1
+  4 | FAIL   | A cannot delete B: companies                        | affected=-1
+  4 | FAIL   | A cannot update B: products                         | affected=-1
+  4 | FAIL   | A cannot delete B: products                         | affected=-1
+  4 | FAIL   | A cannot update B: saved_items                      | affected=-1
+  4 | FAIL   | A cannot delete B: saved_items                      | affected=-1
+  4 | FAIL   | A cannot update B: module_events                    | affected=-1
+  4 | FAIL   | A cannot delete B: module_events                    | affected=-1
+  4 | FAIL   | A cannot update B: activity_log                     | affected=-1
+  4 | FAIL   | A cannot delete B: activity_log                     | affected=-1
+  4 | FAIL   | A cannot update B: financial_transactions           | affected=-1
+  4 | FAIL   | A cannot delete B: financial_transactions           | affected=-1
+  4 | FAIL   | A cannot update B: exchange_rates                   | affected=-1
+  4 | FAIL   | A cannot delete B: exchange_rates                   | affected=-1
+  4 | FAIL   | A cannot update B: ares_conversations               | affected=-1
+  4 | FAIL   | A cannot delete B: ares_conversations               | affected=-1
+  4 | FAIL   | A cannot update B: ares_messages                    | affected=-1
+  4 | FAIL   | A cannot delete B: ares_messages                    | affected=-1
+  4 | FAIL   | A cannot update B: integrations                     | affected=-1
+  4 | FAIL   | A cannot delete B: integrations                     | affected=-1
+  5 | FAIL   | product → B supplier                                | statement was ALLOWED: insert into public.products (name, supplier_id) values ('Leak', '845e2bc7-7bbb-46c0-a6bc-720d77fbd4d5')
+  5 | FAIL   | transaction → B counterparty                        | statement was ALLOWED: insert into public.financial_transactions (kind, amount_minor, currency, counterparty_id) values ('sale', 1, 'AZN', '845
+  5 | PASS   | ARES message → B conversation                       | rejected: 42501
+  6 | FAIL   | viewer cannot insert company                        | statement was ALLOWED: insert into public.companies (name) values ('V')
+  6 | PASS   | viewer can read companies                           | 
+  6 | PASS   | employee cannot read finance                        | 
+  6 | FAIL   | employee cannot insert transaction                  | statement was ALLOWED: insert into public.financial_transactions (kind, amount_minor, currency) values ('sale', 1, 'AZN')
+  6 | PASS   | employee can write data                             | 
+  7 | FAIL   | employee updates own membership                     | wrong error 42P01: relation "public.organization_members" does not exist
+  7 | FAIL   | employee inserts membership                         | wrong error 42P01: relation "public.organization_members" does not exist
+  7 | FAIL   | employee calls set_member_role                      | wrong error 42883: function public.set_member_role(unknown, unknown, unknown) does not exist
+  8 | FAIL   | admin makes manager an owner                        | wrong error 42883: function public.set_member_role(unknown, unknown, unknown) does not exist
+  8 | FAIL   | admin makes manager an admin                        | wrong error 42883: function public.set_member_role(unknown, unknown, unknown) does not exist
+  8 | FAIL   | admin promotes self                                 | wrong error 42883: function public.set_member_role(unknown, unknown, unknown) does not exist
+  8 | FAIL   | admin removes owner                                 | wrong error 42883: function public.remove_member(unknown, unknown) does not exist
+  8 | FAIL   | admin suspends owner                                | wrong error 42883: function public.set_member_status(unknown, unknown, unknown) does not exist
+  8 | FAIL   | admin invites an owner                              | wrong error 42883: function public.create_invite(unknown, unknown, unknown) does not exist
+  8 | FAIL   | admin invites an admin                              | wrong error 42883: function public.create_invite(unknown, unknown, unknown) does not exist
+  8 | FAIL   | admin may set employee→manager                      | 
+  8 | FAIL   | admin may set back manager→employee                 | 
+  9 | FAIL   | last owner leaves                                   | wrong error 42883: function public.remove_member(unknown, unknown) does not exist
+  9 | FAIL   | last owner suspends self                            | wrong error 42883: function public.set_member_status(unknown, unknown, unknown) does not exist
+  9 | FAIL   | last owner demotes self                             | wrong error 42883: function public.set_member_role(unknown, unknown, unknown) does not exist
+  9 | FAIL   | direct delete of last owner (even as DB owner)      | wrong error 42P01: relation "public.organization_members" does not exist
+ 10 | FAIL   | owner adds permission to viewer                     | wrong error 42P01: relation "public.role_permissions" does not exist
+ 10 | FAIL   | owner deletes system permission                     | wrong error 42P01: relation "public.role_permissions" does not exist
+ 10 | FAIL   | owner renames system role                           | wrong error 42P01: relation "public.roles" does not exist
+ 11 | FAIL   | invite flow                                         | function public.create_invite(uuid, unknown, unknown) does not exist
+ 11 | FAIL   | expired invite                                      | wrong error 42883: function public.accept_invite(unknown) does not exist
+ 12 | FAIL   | no plaintext token in organization_invites          | 
+ 12 | FAIL   | token_hash column not readable by members           | wrong error 42P01: relation "public.organization_invites" does not exist
+ 13 | FAIL   | hacker not in B                                     | 
+ 13 | FAIL   | hacker owns exactly one own org                     | 
+ 14 | FAIL   | owner updates audit_log                             | wrong error 42P01: relation "public.audit_log" does not exist
+ 14 | FAIL   | owner deletes audit_log                             | wrong error 42P01: relation "public.audit_log" does not exist
+ 14 | FAIL   | owner inserts fake audit row                        | wrong error 42P01: relation "public.audit_log" does not exist
+ 14 | FAIL   | owner truncates audit_log                           | wrong error 42P01: relation "public.audit_log" does not exist
+ 14 | FAIL   | DB owner updates audit_log (trigger)                | wrong error 42P01: relation "public.audit_log" does not exist
+ 14 | FAIL   | DB owner deletes audit_log (trigger)                | wrong error 42P01: relation "public.audit_log" does not exist
+ 14 | FAIL   | DB owner truncates audit_log (trigger)              | wrong error 42P01: relation "public.audit_log" does not exist
+ 15 | FAIL   | company insert is audited                           | 
+ 15 | FAIL   | role change is audited                              | 
+ 15 | FAIL   | every business table audited                        | 
+ 15 | FAIL   | A cannot see B audit                                | 
+ 15 | FAIL   | employee cannot read audit                          | 
+ 16 | PASS   | suspended sees no companies                         | 
+ 16 | FAIL   | suspended cannot insert                             | statement was ALLOWED: insert into public.companies (name) values ('S')
+ 16 | PASS   | removed sees no companies                           | 
+ 16 | FAIL   | removed cannot insert                               | wrong error 42703: column "org_id" of relation "companies" does not exist
+ 17 | FAIL   | plan setup                                          | relation "public.plans" does not exist
+ 17 | PASS   | module outside plan not readable                    | 
+ 17 | PASS   | module inside plan readable                         | 
+ 17 | FAIL   | module outside plan not writable                    | statement was ALLOWED: insert into public.saved_items (module_key, item_type, title) values ('marketplace', 'note', 'x')
+ 18 | FAIL   | has_permission(B) is false for A                    | 
+ 18 | FAIL   | is_member(B) is false for A                         | 
+ 18 | FAIL   | has_permission(A) is true for A owner               | 
+ 18 | PASS   | all SECURITY DEFINER functions set search_path      | 
+ 18 | FAIL   | anon cannot execute any SECURITY DEFINER function   | 
+ 19 | PASS   | anon reads companies                                | rejected: 42501
+ 19 | PASS   | anon reads products                                 | rejected: 42501
+ 19 | PASS   | anon reads saved_items                              | rejected: 42501
+ 19 | PASS   | anon reads module_events                            | rejected: 42501
+ 19 | PASS   | anon reads activity_log                             | rejected: 42501
+ 19 | PASS   | anon reads financial_transactions                   | rejected: 42501
+ 19 | PASS   | anon reads exchange_rates                           | rejected: 42501
+ 19 | PASS   | anon reads ares_conversations                       | rejected: 42501
+ 19 | PASS   | anon reads ares_messages                            | rejected: 42501
+ 19 | PASS   | anon reads integrations                             | rejected: 42501
+ 19 | FAIL   | anon calls create_invite                            | wrong error 42883: function public.create_invite(unknown, unknown, unknown) does not exist
+ 19 | FAIL   | anon reads organizations                            | wrong error 42P01: relation "public.organizations" does not exist
+ 24 | FAIL   | bulk insert                                         | column "org_id" of relation "companies" does not exist
+ 24 | FAIL   | 10k-row RLS scan < 200 ms                           | rows=1, 0.3 ms
+
+ passed | failed | scenarios 
+--------+--------+-----------
+     21 |     90 |        20
+
+psql:/home/claude/tradecore-ai/tests/sql/tenancy_tests.sql:388: ERROR:  TENANCY TESTS FAILED: 90 failing check(s)
+CONTEXT:  PL/pgSQL function inline_code_block line 3 at RAISE

@@ -1,0 +1,48 @@
+İ-3 · QIRMIZI İŞƏ SALMA — miqrasiyalar 0013–0017 OLMADAN (tests/sql/run_marketplace.sh, RED=1)
+Tarix: 2026-11-21 · lokal PostgreSQL 16.15 · Supabase/Netlify yoxdur
+
+safety: no live DropPilot reference; local socket only (/tmp/tmp.nz4OqLlTcM)
+── İ-3 marketplace tests on the schema WITHOUT migrations 0013–0017 (expected to FAIL)
+RED RUN: passed=11 failed=301 groups=18
+RED RUN: MARKETPLACE TESTS FAILED: 301 failing check(s)
+RED RUN: tests failed as expected
+
+Keçən 11 yoxlama (gözlənilən: setup addımları və 'dəyişməməli olan' yoxlamalar):
+ M00  | PASS   | setup: komandalar dəvətlə quruldu                                                         
+ M01  | PASS   | products cədvəlinin sütunları dəyişməyib                                              
+ M01  | PASS   | setup: yoxlama məhsulu                                                                      
+ M04  | PASS   | sahib (aal2) işçi rolu üçün 2FA tələb edir                                            
+ M04  | PASS   | siyasət geri götürülür                                                                  
+ M08  | PASS   | müşahidəçi az-stok bildirişi almır                                                     
+ M11  | PASS   | Y1: webhook jurnalı audit jurnalına yazılmır                                             
+ M11  | PASS   | Y1: ünvan, telefon, IP audit jurnalında yoxdur                                             
+ M13  | PASS   | bütün SECURITY DEFINER funksiyaları search_path təyin edir                               
+ M13  | PASS   | anon heç bir SECURITY DEFINER funksiyasını çağıra bilmir                               
+ M17  | PASS   | kalkulyator parametrləri audit-ə yazılmır (şəxsi ayar)                                 
+
+Uğursuz yoxlamaların ilk 25-i:
+ M00  | FAIL   | setup: P kataloqu server funksiyası ilə idxal edildi                                                    | function public.marketpla
+ M00  | FAIL   | setup: Q kataloqu idxal edildi                                                                          | function public.marketplace
+ M00  | FAIL   | setup: listinq ID-ləri                                                                                  | relation "public.marketpla
+ M00  | FAIL   | setup: sahib xərcləri daxil edir                                                                        | 42P01: relation "public.m
+ M00  | FAIL   | setup: sahib variant xərcini daxil edir                                                                 | 42P01: relation "public.ma
+ M00  | FAIL   | setup: sahib Modul 03 parametrlərini yaradır                                                            | 42P01: relation "public.m
+ M00  | FAIL   | setup: işçi əl ilə məhsul yaradır                                                                       | relation "public.mark
+ M00  | FAIL   | setup: Shopify sifarişi idxal edildi                                                                    | function public.marketplac
+ M00  | FAIL   | setup: Q sifarişi idxal edildi                                                                          | function public.marketplac
+ M00  | FAIL   | setup: webhook hadisələri saxlanıldı                                                                    | function public.integra
+ M00  | FAIL   | setup: sifariş ID-ləri                                                                                  | relation "public.marketpl
+ M01  | FAIL   | 9 yeni cədvəl var və hamısında RLS açıqdır                                                              | 
+ M01  | FAIL   | hər yeni cədvəldə org_id NOT NULL-dur                                                                   | 
+ M01  | FAIL   | bütün pul sütunları (_minor) bigint-dir                                                                 | 
+ M01  | FAIL   | notifications.dedupe_key əlavə olunub (boş buraxıla bilər)                                              | 
+ M01  | FAIL   | integrations: Shopify domeni üzrə unikal indeks                                                         | 
+ M01  | FAIL   | listinq products-a 1:1 bağlıdır (product_id unikal)                                                     | 
+ M01  | FAIL   | listinq → products: ON DELETE RESTRICT                                                                  | 
+ M01  | FAIL   | sifariş sətri → listinq: ON DELETE RESTRICT (D6)                                                        | 
+ M01  | FAIL   | mənfi alış qiyməti rədd edilir                                                                          | wrong error 42P01: rel
+ M01  | FAIL   | Shopify CDN-dən kənar şəkil linki rədd edilir                                                           | wrong error 42P01: rel
+ M01  | FAIL   | javascript: təchizatçı linki rədd edilir                                                                | wrong error 42P01: rela
+ M01  | FAIL   | yad domenli Admin linki rədd edilir                                                                     | wrong error 42P01: relatio
+ M01  | FAIL   | naməlum məhsul statusu rədd edilir                                                                      | wrong error 42P01: relat
+ M01  | FAIL   | mənfi stok rədd edilir                                                                                  | wrong error 42P01: relati

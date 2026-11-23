@@ -1,0 +1,17 @@
+İ-3 · JavaScript reqressiyası (JS kodu dəyişməyib) — 2026-11-21
+── unit (node --test tests/unit/*.test.js)
+# tests 53
+# pass 53
+# fail 0
+── E2E Phase 1/2A (tests/e2e/harness.mjs)
+70/70 E2E checks passed
+── E2E Phase 2B (tests/e2e/phase2b-harness.mjs)
+54/54 Phase 2B E2E checks passed
+── i18n audit (Problems: 0 → uğurlu; 31 qeyd = yeni SQL xəta mesajlarının EN/RU tərcüməsi İ-4-də edilir)
+  • database message without translation: "Bu məhsulun"
+
+Unused keys (0): —
+AZ keys: 480 · EN keys: 622 · RU keys: 622
+Database messages checked: 57 · server messages checked: 25
+Problems (0):
+Notes (31):

@@ -1,0 +1,11 @@
+DropPilot müqayisəsi (tests/sql/marketplace_parity.sh) — DropPilot-un öz SQL faylları arxivdəki nüsxədən, müvəqqəti lokal bazada
+line|sale|shipping|fee|refund|cost|cost_missing|status|frozen rate   (qəpik)
+── DropPilot dp_upsert_shopify_order_lines
+L1|8500|850|300|1743|3800|false|complete|1.70
+L2|1700|0|50|0|900|false|complete|1.70
+L3|1800|0|60|781|1200|false|complete|1.80
+── TRADECORE marketplace_upsert_shopify_order
+L1|8500|850|300|1743|3800|false|complete|1.70
+L2|1700|0|50|0|900|false|complete|1.70
+L3|1800|0|60|781|1200|false|complete|1.80
+PARITY OK: 3 lines identical after 4 deliveries

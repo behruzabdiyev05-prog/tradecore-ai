@@ -1,0 +1,329 @@
+TAP version 13
+# Subtest: exactly 10 modules with unique keys and codes 01–10
+ok 1 - exactly 10 modules with unique keys and codes 01–10
+  ---
+  duration_ms: 1.311938
+  type: 'test'
+  ...
+# Subtest: DB module seed matches shared/modules.js
+ok 2 - DB module seed matches shared/modules.js
+  ---
+  duration_ms: 4.241771
+  type: 'test'
+  ...
+# Subtest: DB currencies match shared/finance.js
+ok 3 - DB currencies match shared/finance.js
+  ---
+  duration_ms: 2.871625
+  type: 'test'
+  ...
+# Subtest: every module has its own folder, root component and lazy loader
+ok 4 - every module has its own folder, root component and lazy loader
+  ---
+  duration_ms: 4.663046
+  type: 'test'
+  ...
+# Subtest: no secrets in frontend: only VITE_SUPABASE_* env read in src/
+ok 5 - no secrets in frontend: only VITE_SUPABASE_* env read in src/
+  ---
+  duration_ms: 34.358698
+  type: 'test'
+  ...
+# Subtest: matchPath
+ok 6 - matchPath
+  ---
+  duration_ms: 0.372616
+  type: 'test'
+  ...
+# Subtest: eventBus: routing, filters, validation, persistence
+ok 7 - eventBus: routing, filters, validation, persistence
+  ---
+  duration_ms: 1.206959
+  type: 'test'
+  ...
+# Subtest: every section has a theme with an existing background scene
+ok 8 - every section has a theme with an existing background scene
+  ---
+  duration_ms: 3.4832
+  type: 'test'
+  ...
+# Subtest: toMinor parses decimals exactly (no float drift)
+ok 9 - toMinor parses decimals exactly (no float drift)
+  ---
+  duration_ms: 2.533186
+  type: 'test'
+  ...
+# Subtest: fromMinor / formatMoney
+ok 10 - fromMinor / formatMoney
+  ---
+  duration_ms: 13.27993
+  type: 'test'
+  ...
+# Subtest: convertToBase matches PostgreSQL round(amount * rate) (see tests/sql)
+ok 11 - convertToBase matches PostgreSQL round(amount * rate) (see tests/sql)
+  ---
+  duration_ms: 0.317649
+  type: 'test'
+  ...
+# Subtest: summarize uses the same definitions as finance_module_summary
+ok 12 - summarize uses the same definitions as finance_module_summary
+  ---
+  duration_ms: 0.385242
+  type: 'test'
+  ...
+# Subtest: summarize: empty, capital-out, validation
+ok 13 - summarize: empty, capital-out, validation
+  ---
+  duration_ms: 0.240973
+  type: 'test'
+  ...
+# Subtest: summarizeByModule consolidates
+ok 14 - summarizeByModule consolidates
+  ---
+  duration_ms: 0.239755
+  type: 'test'
+  ...
+# Subtest: consolidate() of DB view rows (bigint as strings)
+ok 15 - consolidate() of DB view rows (bigint as strings)
+  ---
+  duration_ms: 0.623307
+  type: 'test'
+  ...
+# Subtest: transaction kinds match the DB enum
+ok 16 - transaction kinds match the DB enum
+  ---
+  duration_ms: 6.097098
+  type: 'test'
+  ...
+# Subtest: monthlySeries buckets by month, zero-fills, ignores other groups and out-of-window
+ok 17 - monthlySeries buckets by month, zero-fills, ignores other groups and out-of-window
+  ---
+  duration_ms: 1.102769
+  type: 'test'
+  ...
+# Subtest: netMarginPercent
+ok 18 - netMarginPercent
+  ---
+  duration_ms: 0.470681
+  type: 'test'
+  ...
+# Subtest: health: ok and reports booleans only
+ok 19 - health: ok and reports booleans only
+  ---
+  duration_ms: 18.860115
+  type: 'test'
+  ...
+# Subtest: ares GET: reports not configured honestly
+ok 20 - ares GET: reports not configured honestly
+  ---
+  duration_ms: 1.147205
+  type: 'test'
+  ...
+# Subtest: ares POST: auth required, token verified server-side
+ok 21 - ares POST: auth required, token verified server-side
+  ---
+  duration_ms: 1.065358
+  type: 'test'
+  ...
+# Subtest: ares POST: validation
+ok 22 - ares POST: validation
+  ---
+  duration_ms: 2.514854
+  type: 'test'
+  ...
+# Subtest: ares POST: valid request returns 503 ARES_NOT_CONFIGURED (no fake answers)
+ok 23 - ares POST: valid request returns 503 ARES_NOT_CONFIGURED (no fake answers)
+  ---
+  duration_ms: 1.234921
+  type: 'test'
+  ...
+# Subtest: ares: auth not configured → 503
+ok 24 - ares: auth not configured → 503
+  ---
+  duration_ms: 0.529582
+  type: 'test'
+  ...
+# Subtest: ARES context: central vs module scope
+ok 25 - ARES context: central vs module scope
+  ---
+  duration_ms: 0.248859
+  type: 'test'
+  ...
+# Subtest: integrations: auth required; reports presence, never values
+ok 26 - integrations: auth required; reports presence, never values
+  ---
+  duration_ms: 0.837887
+  type: 'test'
+  ...
+# Subtest: i18n: EN and RU have exactly the AZ keys (+ translations of shared names)
+ok 27 - i18n: EN and RU have exactly the AZ keys (+ translations of shared names)
+  ---
+  duration_ms: 2.194094
+  type: 'test'
+  ...
+# Subtest: i18n: placeholders match and no value is empty
+ok 28 - i18n: placeholders match and no value is empty
+  ---
+  duration_ms: 2.410031
+  type: 'test'
+  ...
+# Subtest: i18n: every module, role, currency, transaction kind and month is translated
+ok 29 - i18n: every module, role, currency, transaction kind and month is translated
+  ---
+  duration_ms: 0.500076
+  type: 'test'
+  ...
+# Subtest: i18n: every literal t('…') key used in src/ exists in the AZ dictionary
+ok 30 - i18n: every literal t('…') key used in src/ exists in the AZ dictionary
+  ---
+  duration_ms: 28.04674
+  type: 'test'
+  ...
+# Subtest: i18n: no hard-coded Azerbaijani UI text left in components (outside dictionaries)
+ok 31 - i18n: no hard-coded Azerbaijani UI text left in components (outside dictionaries)
+  ---
+  duration_ms: 29.269346
+  type: 'test'
+  ...
+# Subtest: i18n: the Phase 1/2A Azerbaijani texts checked by the browser tests are unchanged
+ok 32 - i18n: the Phase 1/2A Azerbaijani texts checked by the browser tests are unchanged
+  ---
+  duration_ms: 0.23477
+  type: 'test'
+  ...
+# Subtest: registry: unique keys and paths, all 10 modules, labels exist
+ok 33 - registry: unique keys and paths, all 10 modules, labels exist
+  ---
+  duration_ms: 0.248667
+  type: 'test'
+  ...
+# Subtest: registry (43): a page hidden from the menu is also refused by the route guard — for every role
+ok 34 - registry (43): a page hidden from the menu is also refused by the route guard — for every role
+  ---
+  duration_ms: 1.696882
+  type: 'test'
+  ...
+# Subtest: registry: path lookup and breadcrumb
+ok 35 - registry: path lookup and breadcrumb
+  ---
+  duration_ms: 1.087935
+  type: 'test'
+  ...
+# Subtest: registry is the single source: sidebar, palette, breadcrumb and route guard read it
+ok 36 - registry is the single source: sidebar, palette, breadcrumb and route guard read it
+  ---
+  duration_ms: 2.547715
+  type: 'test'
+  ...
+# Subtest: preferences: allowed keys and values only, size limit, cleaning
+ok 37 - preferences: allowed keys and values only, size limit, cleaning
+  ---
+  duration_ms: 0.573394
+  type: 'test'
+  ...
+# Subtest: preferences: the database rule lists the same keys as shared/preferences.js
+ok 38 - preferences: the database rule lists the same keys as shared/preferences.js
+  ---
+  duration_ms: 1.03021
+  type: 'test'
+  ...
+# Subtest: azFold (browser) = az_fold (database): same letter table
+ok 39 - azFold (browser) = az_fold (database): same letter table
+  ---
+  duration_ms: 1.01861
+  type: 'test'
+  ...
+# Subtest: search: LIKE wildcards are escaped and the limit is capped in global_search()
+ok 40 - search: LIKE wildcards are escaped and the limit is capped in global_search()
+  ---
+  duration_ms: 0.503308
+  type: 'test'
+  ...
+# Subtest: requireMember: check_access "mfa_required" → 403 MFA_REQUIRED (decision G)
+ok 41 - requireMember: check_access "mfa_required" → 403 MFA_REQUIRED (decision G)
+  ---
+  duration_ms: 17.460403
+  type: 'test'
+  ...
+# Subtest: internal-link rule: browser regex = database check
+ok 42 - internal-link rule: browser regex = database check
+  ---
+  duration_ms: 3.034771
+  type: 'test'
+  ...
+# Subtest: i18n: errors reach the screen through errorText() (translated), never as raw .message
+ok 43 - i18n: errors reach the screen through errorText() (translated), never as raw .message
+  ---
+  duration_ms: 29.40489
+  type: 'test'
+  ...
+# Subtest: i18n audit script finds no gaps (keys, alphabet, database and server messages)
+ok 44 - i18n audit script finds no gaps (keys, alphabet, database and server messages)
+  ---
+  duration_ms: 60.334186
+  type: 'test'
+  ...
+# Subtest: 20 · ARES: another organization → 403 NOT_MEMBER
+ok 45 - 20 · ARES: another organization → 403 NOT_MEMBER
+  ---
+  duration_ms: 21.772031
+  type: 'test'
+  ...
+# Subtest: 20 · ARES: malformed orgId → 400; omitted orgId → active org
+ok 46 - 20 · ARES: malformed orgId → 400; omitted orgId → active org
+  ---
+  duration_ms: 2.148284
+  type: 'test'
+  ...
+# Subtest: 20 · ARES: suspended member → 403 MEMBER_SUSPENDED
+ok 47 - 20 · ARES: suspended member → 403 MEMBER_SUSPENDED
+  ---
+  duration_ms: 0.87584
+  type: 'test'
+  ...
+# Subtest: 20 · ARES: module context needs module read permission
+ok 48 - 20 · ARES: module context needs module read permission
+  ---
+  duration_ms: 0.934652
+  type: 'test'
+  ...
+# Subtest: 20 · integrations: viewer without integrations.manage → 403; other org → 403; owner → 200
+ok 49 - 20 · integrations: viewer without integrations.manage → 403; other org → 403; owner → 200
+  ---
+  duration_ms: 2.063456
+  type: 'test'
+  ...
+# Subtest: 20 · membership is checked with the caller token — never a service-role key
+ok 50 - 20 · membership is checked with the caller token — never a service-role key
+  ---
+  duration_ms: 0.943918
+  type: 'test'
+  ...
+# Subtest: 21 · no service-role key or secret env names anywhere in src/ or netlify/
+ok 51 - 21 · no service-role key or secret env names anywhere in src/ or netlify/
+  ---
+  duration_ms: 49.646498
+  type: 'test'
+  ...
+# Subtest: role-assignment rules (mirror of SQL _can_manage)
+ok 52 - role-assignment rules (mirror of SQL _can_manage)
+  ---
+  duration_ms: 0.395561
+  type: 'test'
+  ...
+# Subtest: permission registry: 31 keys, 5 roles, owner has all, viewer writes nothing
+ok 53 - permission registry: 31 keys, 5 roles, owner has all, viewer writes nothing
+  ---
+  duration_ms: 1.080824
+  type: 'test'
+  ...
+1..53
+# tests 53
+# suites 0
+# pass 53
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 609.714798
+exit=0

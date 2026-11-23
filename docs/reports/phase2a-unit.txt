@@ -1,0 +1,220 @@
+TAP version 13
+# Subtest: exactly 10 modules with unique keys and codes 01–10
+ok 1 - exactly 10 modules with unique keys and codes 01–10
+  ---
+  duration_ms: 1.217957
+  type: 'test'
+  ...
+# Subtest: DB module seed matches shared/modules.js
+ok 2 - DB module seed matches shared/modules.js
+  ---
+  duration_ms: 4.753335
+  type: 'test'
+  ...
+# Subtest: DB currencies match shared/finance.js
+ok 3 - DB currencies match shared/finance.js
+  ---
+  duration_ms: 1.00942
+  type: 'test'
+  ...
+# Subtest: every module has its own folder, root component and lazy loader
+ok 4 - every module has its own folder, root component and lazy loader
+  ---
+  duration_ms: 4.201459
+  type: 'test'
+  ...
+# Subtest: no secrets in frontend: only VITE_SUPABASE_* env read in src/
+ok 5 - no secrets in frontend: only VITE_SUPABASE_* env read in src/
+  ---
+  duration_ms: 17.778239
+  type: 'test'
+  ...
+# Subtest: matchPath
+ok 6 - matchPath
+  ---
+  duration_ms: 0.346595
+  type: 'test'
+  ...
+# Subtest: eventBus: routing, filters, validation, persistence
+ok 7 - eventBus: routing, filters, validation, persistence
+  ---
+  duration_ms: 1.040954
+  type: 'test'
+  ...
+# Subtest: every section has a theme with an existing background scene
+ok 8 - every section has a theme with an existing background scene
+  ---
+  duration_ms: 3.781405
+  type: 'test'
+  ...
+# Subtest: toMinor parses decimals exactly (no float drift)
+ok 9 - toMinor parses decimals exactly (no float drift)
+  ---
+  duration_ms: 1.813634
+  type: 'test'
+  ...
+# Subtest: fromMinor / formatMoney
+ok 10 - fromMinor / formatMoney
+  ---
+  duration_ms: 12.780942
+  type: 'test'
+  ...
+# Subtest: convertToBase matches PostgreSQL round(amount * rate) (see tests/sql)
+ok 11 - convertToBase matches PostgreSQL round(amount * rate) (see tests/sql)
+  ---
+  duration_ms: 0.311784
+  type: 'test'
+  ...
+# Subtest: summarize uses the same definitions as finance_module_summary
+ok 12 - summarize uses the same definitions as finance_module_summary
+  ---
+  duration_ms: 0.323552
+  type: 'test'
+  ...
+# Subtest: summarize: empty, capital-out, validation
+ok 13 - summarize: empty, capital-out, validation
+  ---
+  duration_ms: 0.283596
+  type: 'test'
+  ...
+# Subtest: summarizeByModule consolidates
+ok 14 - summarizeByModule consolidates
+  ---
+  duration_ms: 0.245661
+  type: 'test'
+  ...
+# Subtest: consolidate() of DB view rows (bigint as strings)
+ok 15 - consolidate() of DB view rows (bigint as strings)
+  ---
+  duration_ms: 0.613303
+  type: 'test'
+  ...
+# Subtest: transaction kinds match the DB enum
+ok 16 - transaction kinds match the DB enum
+  ---
+  duration_ms: 6.023784
+  type: 'test'
+  ...
+# Subtest: monthlySeries buckets by month, zero-fills, ignores other groups and out-of-window
+ok 17 - monthlySeries buckets by month, zero-fills, ignores other groups and out-of-window
+  ---
+  duration_ms: 1.142291
+  type: 'test'
+  ...
+# Subtest: netMarginPercent
+ok 18 - netMarginPercent
+  ---
+  duration_ms: 0.386978
+  type: 'test'
+  ...
+# Subtest: health: ok and reports booleans only
+ok 19 - health: ok and reports booleans only
+  ---
+  duration_ms: 20.132996
+  type: 'test'
+  ...
+# Subtest: ares GET: reports not configured honestly
+ok 20 - ares GET: reports not configured honestly
+  ---
+  duration_ms: 1.092398
+  type: 'test'
+  ...
+# Subtest: ares POST: auth required, token verified server-side
+ok 21 - ares POST: auth required, token verified server-side
+  ---
+  duration_ms: 1.099862
+  type: 'test'
+  ...
+# Subtest: ares POST: validation
+ok 22 - ares POST: validation
+  ---
+  duration_ms: 2.507098
+  type: 'test'
+  ...
+# Subtest: ares POST: valid request returns 503 ARES_NOT_CONFIGURED (no fake answers)
+ok 23 - ares POST: valid request returns 503 ARES_NOT_CONFIGURED (no fake answers)
+  ---
+  duration_ms: 1.392104
+  type: 'test'
+  ...
+# Subtest: ares: auth not configured → 503
+ok 24 - ares: auth not configured → 503
+  ---
+  duration_ms: 0.542177
+  type: 'test'
+  ...
+# Subtest: ARES context: central vs module scope
+ok 25 - ARES context: central vs module scope
+  ---
+  duration_ms: 0.258224
+  type: 'test'
+  ...
+# Subtest: integrations: auth required; reports presence, never values
+ok 26 - integrations: auth required; reports presence, never values
+  ---
+  duration_ms: 0.958318
+  type: 'test'
+  ...
+# Subtest: 20 · ARES: another organization → 403 NOT_MEMBER
+ok 27 - 20 · ARES: another organization → 403 NOT_MEMBER
+  ---
+  duration_ms: 19.586504
+  type: 'test'
+  ...
+# Subtest: 20 · ARES: malformed orgId → 400; omitted orgId → active org
+ok 28 - 20 · ARES: malformed orgId → 400; omitted orgId → active org
+  ---
+  duration_ms: 2.176594
+  type: 'test'
+  ...
+# Subtest: 20 · ARES: suspended member → 403 MEMBER_SUSPENDED
+ok 29 - 20 · ARES: suspended member → 403 MEMBER_SUSPENDED
+  ---
+  duration_ms: 0.81591
+  type: 'test'
+  ...
+# Subtest: 20 · ARES: module context needs module read permission
+ok 30 - 20 · ARES: module context needs module read permission
+  ---
+  duration_ms: 0.898602
+  type: 'test'
+  ...
+# Subtest: 20 · integrations: viewer without integrations.manage → 403; other org → 403; owner → 200
+ok 31 - 20 · integrations: viewer without integrations.manage → 403; other org → 403; owner → 200
+  ---
+  duration_ms: 1.828095
+  type: 'test'
+  ...
+# Subtest: 20 · membership is checked with the caller token — never a service-role key
+ok 32 - 20 · membership is checked with the caller token — never a service-role key
+  ---
+  duration_ms: 0.930851
+  type: 'test'
+  ...
+# Subtest: 21 · no service-role key or secret env names anywhere in src/ or netlify/
+ok 33 - 21 · no service-role key or secret env names anywhere in src/ or netlify/
+  ---
+  duration_ms: 35.777612
+  type: 'test'
+  ...
+# Subtest: role-assignment rules (mirror of SQL _can_manage)
+ok 34 - role-assignment rules (mirror of SQL _can_manage)
+  ---
+  duration_ms: 0.305823
+  type: 'test'
+  ...
+# Subtest: permission registry: 31 keys, 5 roles, owner has all, viewer writes nothing
+ok 35 - permission registry: 31 keys, 5 roles, owner has all, viewer writes nothing
+  ---
+  duration_ms: 0.928533
+  type: 'test'
+  ...
+1..35
+# tests 35
+# suites 0
+# pass 35
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 343.617568

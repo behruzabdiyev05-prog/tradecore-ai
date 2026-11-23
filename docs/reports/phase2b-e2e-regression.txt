@@ -1,0 +1,73 @@
+PASS  Unconfigured build shows setup screen
+PASS  Login page renders
+PASS  Short password rejected client-side (AZ message)
+PASS  Wrong password → AZ error
+PASS  Sign-in → dashboard
+PASS  Light mode is the default
+PASS  Light scene image used
+PASS  Sidebar lists 10 modules  (found 10)
+PASS  Dashboard shows empty-ledger message (no fake numbers)
+PASS  System status: DB check ok
+PASS  System status: real /api/health reached
+PASS  Revenue capsule chart: honest empty state (no sample data)
+PASS  Rail collapsed by default (labels hidden)
+PASS  Rail expands with labels
+PASS  Ctrl+K focuses module search
+PASS  Module route /m/product-research
+PASS  Module route /m/wholesale
+PASS  Module route /m/marketplace
+PASS  Module route /m/arbitrage
+PASS  Module route /m/import-export
+PASS  Module route /m/b2b-trading
+PASS  Module route /m/used-goods
+PASS  Module route /m/digital-products
+PASS  Module route /m/b2b-client-finder
+PASS  Module route /m/financial-trading
+PASS  Section scene switches (financial-trading → nebula)
+PASS  Section accent switches
+PASS  Unbuilt tab shows honest state
+PASS  ARES opened scoped to module
+PASS  ARES status reports not configured
+PASS  ARES message → honest 503 from real handler (authenticated)
+PASS  Finance page (deep link) empty state
+PASS  Margin gauge shows no-data state
+PASS  Background image served
+PASS  Integrations list from authenticated API
+PASS  Unknown route → 404 page
+PASS  Module jump search navigates
+PASS  Mobile: no horizontal overflow
+PASS  Mobile: sidebar hidden by default
+PASS  Mobile: menu opens sidebar
+PASS  2A: topbar shows active organization
+PASS  2A: topbar shows role (Sahib)
+PASS  2A: owner sees nav /system/team
+PASS  2A: owner sees nav /system/organization
+PASS  2A: owner sees nav /system/audit
+PASS  2A: owner sees nav /system/plan
+PASS  2A: team lists 3 members
+PASS  2A: own role is not editable
+PASS  2A: invite link shown once (64-hex token)  (http://localhost:4789/invite/c88717748cdc813e425e97caf1698dedeff0e9324b3742f010ebfc9f2e22abc1)
+PASS  2A: pending invite listed
+PASS  2A: organization renamed
+PASS  2A: audit log shows the invite and the rename
+PASS  2A: plan page — internal plan, 10/10 modules
+PASS  2A: org B data shown after switch (viewer)
+PASS  2A: viewer has no audit / organization nav
+PASS  22: no data of org B remains after switching back  (₼0.00)
+PASS  23: viewer opening /system/audit → İcazə yoxdur
+PASS  23: viewer opening /system/organization → İcazə yoxdur
+PASS  2A: viewer sees no integrations list
+PASS  D: signup form has company name field
+PASS  D: empty company name rejected
+PASS  2A: invite link → sign-in with invite hint
+PASS  2A: invited user joined existing org (no new org)
+PASS  2A: invited user belongs to exactly one org
+PASS  Toggle → dark mode
+PASS  Dark scene image used
+PASS  Mode persists after reload
+PASS  Toggle back → light
+PASS  Sign out → login page
+PASS  No uncaught runtime errors
+
+70/70 E2E checks passed
+exit=0

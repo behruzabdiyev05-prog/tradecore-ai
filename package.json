@@ -1,0 +1,33 @@
+{
+  "name": "tradecore-ai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TRADECORE AI — AI-powered business, trading and commerce management platform (ARES central AI).",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "netlify:dev": "netlify dev",
+    "test": "node --test \"tests/unit/*.test.js\"",
+    "test:sql": "bash tests/sql/run.sh",
+    "test:e2e": "node tests/e2e/harness.mjs",
+    "test:sql:2b": "bash tests/sql/run_phase2b.sh",
+    "test:e2e:2b": "node tests/e2e/phase2b-harness.mjs",
+    "test:sql:mp": "bash tests/sql/run_marketplace.sh",
+    "test:sql:mp:red": "RED=1 bash tests/sql/run_marketplace.sh"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-icons": "^5.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
+    "vite": "^7.0.0"
+  }
+}

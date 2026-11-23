@@ -1,0 +1,29 @@
+Köhnə tests/sql/run.sh (dəyişməyib) — yeni miqrasiyalar yerində olarkən
+ ALL SQL TESTS PASSED
+ ALL TENANCY TESTS PASSED
+── permission matrix sync
+permission matrix in sync (125 pairs)
+ after_up
+ after_up: data intact, isolation OK
+ after_down
+ after_down: data intact, isolation OK
+ after_reup
+ after_reup: data intact, isolation OK
+ALL DATABASE CHECKS PASSED
+
+Köhnə tests/sql/run_phase2b.sh (dəyişməyib)
+ ALL SQL TESTS PASSED
+ passed | failed | scenarios 
+    112 |      0 |        20
+ ALL TENANCY TESTS PASSED
+ passed | failed | scenarios 
+    148 |      0 |        18
+ ALL PHASE 2B TESTS PASSED
+── read-only Supabase verification script (supabase/verify/phase2b_verify.sql)
+verification script: 24 checks, all PASS
+── preferences rule sync
+preferences rule in sync (30 cases)
+schema after rollback == Phase 2A schema (pg_dump identical; pg_trgm kept on purpose)
+ ALL TENANCY TESTS PASSED
+ ALL PHASE 2B TESTS PASSED
+ALL PHASE 2B DATABASE CHECKS PASSED

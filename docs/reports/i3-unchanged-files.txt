@@ -1,0 +1,35 @@
+İ-3 · Fayl müqayisəsi (sha256): İ-3-dən əvvəlki vəziyyət ↔ İ-3-dən sonra (.tmp/ müvəqqəti test çıxışları istisna)
+İ-3-dən əvvəl mövcud fayllar: 163
+Silinən: 0
+Dəyişdirilən: 3 — silinən sətir yoxdur (CHANGELOG +18, ARCHITECTURE +10); package.json: 2 skript + bir sətrin sonuna vergül
+  ~ ./CHANGELOG.md
+  ~ ./docs/ARCHITECTURE.md
+  ~ ./package.json
+Bayt-bayt eyni qalan: 160
+  bunlardan: supabase/migrations: 12, supabase/rollback: 8, tests: 20, src: 69, shared: 5, netlify: 8
+Yeni fayllar: 25
+  + ./docs/MARKETPLACE_INTEGRATION.md
+  + ./docs/reports/i3-parity.txt
+  + ./docs/reports/i3-red-run.txt
+  + ./docs/reports/i3-regression-js.txt
+  + ./docs/reports/i3-regression-sql.txt
+  + ./docs/reports/i3-sql-detail.txt
+  + ./docs/reports/i3-sql.txt
+  + ./supabase/migrations/20261124001300_notifications_dedupe.sql
+  + ./supabase/migrations/20261124001400_marketplace_core.sql
+  + ./supabase/migrations/20261124001500_supplier_offers.sql
+  + ./supabase/migrations/20261124001600_integration_events.sql
+  + ./supabase/migrations/20261124001700_marketplace_functions.sql
+  + ./supabase/rollback/20261124001300_notifications_dedupe.down.sql
+  + ./supabase/rollback/20261124001400_marketplace_core.down.sql
+  + ./supabase/rollback/20261124001500_supplier_offers.down.sql
+  + ./supabase/rollback/20261124001600_integration_events.down.sql
+  + ./supabase/rollback/20261124001700_marketplace_functions.down.sql
+  + ./supabase/verify/marketplace_verify.sql
+  + ./tests/sql/marketplace_parity.sh
+  + ./tests/sql/marketplace_tests.sql
+  + ./tests/sql/rollback_check_mp.sql
+  + ./tests/sql/rollback_seed_mp.sql
+  + ./tests/sql/run_marketplace.sh
+  + ./tests/sql/supabase_stub_marketplace.sql
+  + ./docs/reports/i3-unchanged-files.txt (bu fayl)

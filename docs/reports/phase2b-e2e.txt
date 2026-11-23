@@ -1,0 +1,57 @@
+PASS  dashboard: first-steps card from real data  (team (3 members) already done)
+PASS  bell: unread count = own notifications of org A (2)
+PASS  bell: lists only my notifications of org A  (Murad Əliyev dəvətinizi qəbul etdi10 dəq əvvəl | Aysel Məmmədova komandaya qoşuldu30 dəq əvvəl)
+PASS  bell: "mark all read" clears the count
+PASS  realtime: a new notification appears without reload (< 3 s)  (90 ms)
+PASS  44: bell shows org B count only (1)
+PASS  44: no notification of org A in the bell  ("İkinci Şirkət" şirkətində rolunuz dəyişdi: Müşahidəçi5 dəq əvvəl)
+PASS  44: no "recently viewed" pages of org A
+PASS  44: search in org B does not find org A members
+PASS  44: search in org B finds only org B records  (Gizli B MarketGəncə)
+PASS  43: viewer opening /settings/security → İcazə yoxdur
+PASS  43: viewer opening /settings/audit → İcazə yoxdur
+PASS  43: viewer opening /settings/organization → İcazə yoxdur
+PASS  43: viewer opening /system/audit → İcazə yoxdur
+PASS  43: viewer settings menu has no security / organization / audit  ( Görünüş və dil |  Bildirişlər |  Komanda |  Plan |  Sistem və inteqrasiyalar)
+PASS  44: back in org A — recently viewed shows A pages
+PASS  search: member found by name (members.read)
+PASS  search: "seher" finds "Şəhər Market" (Azerbaijani letters folded)
+PASS  search: Enter opens the first page result
+PASS  search page: /search?q= shows grouped results
+PASS  breadcrumb: Parametrlər › Bildirişlər
+PASS  shortcut: G then D → dashboard
+PASS  shortcut: G then S → settings
+PASS  shortcut: ? opens the list, Esc closes it
+PASS  + New: only working actions (invite, new company)  ( Üzv dəvət et |  Yeni şirkət yarat)
+PASS  + New → invite: team page with the e-mail field focused
+PASS  settings: switching a notification type off is saved
+PASS  org details: 9-digit VÖEN rejected before saving
+PASS  org details: javascript: website rejected
+PASS  org details + logo saved
+PASS  logo: other file types refused
+PASS  profile: data and avatar saved (avatar in the top bar)
+PASS  password: wrong current password refused
+PASS  password: changed after re-authentication
+PASS  sessions: sign out other devices
+PASS  language: English applied immediately
+PASS  language: dashboard in English
+PASS  language: kept after reload (from the profile)
+PASS  language: Russian
+PASS  language: back to Azerbaijani
+PASS  G: owner without 2FA cannot require 2FA for owners (lock-out guard)
+PASS  G: owner requires 2FA for employees
+PASS  G: org B requires 2FA → data closed, setup offered
+PASS  2FA: wrong code refused
+PASS  2FA: enrolled → org B opens (session aal2)
+PASS  2FA: sign-in asks for the code
+PASS  2FA: correct code → dashboard
+PASS  notifications page: list + unread filter  (all=3)
+PASS  my activity: own audit rows
+PASS  mobile: no horizontal overflow on /settings/notifications  (div.scene-layer:404 div.settings-nav-group:1044 a.settings-nav-item:486 svg.[object:397)
+PASS  mobile: no horizontal overflow on /notifications  (div.scene-layer:404)
+PASS  mobile: no horizontal overflow on /profile  (div.scene-layer:404)
+PASS  mobile: bell and search button visible
+PASS  No uncaught runtime errors
+
+54/54 Phase 2B E2E checks passed
+exit=0

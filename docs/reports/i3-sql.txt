@@ -1,0 +1,50 @@
+İ-3 · TAM DƏST (tests/sql/run_marketplace.sh) — 2026-11-21
+safety: no live DropPilot reference; local socket only (/tmp/tmp.VSHS2riO3D)
+     set_config     
+ public, extensions
+phase2b_verify: 24 checks, all PASS
+marketplace_verify: 27 checks, all PASS
+── Phase 1 tests
+── Phase 2A tests
+ ALL TENANCY TESTS PASSED
+── Phase 2B tests
+ ALL PHASE 2B TESTS PASSED
+── İ-3 marketplace tests
+marketplace: passed=303 failed=0 groups=18
+ ALL MARKETPLACE (İ-3) TESTS PASSED
+── İ-3 rollback cycle
+                notify                
+ 3c1cc28c-a3b8-4074-ba10-98a071a87d60
+ 2B data + baseline recorded
+   marketplace_upsert_catalog   
+ {"products": 1, "variants": 1}
+                                           marketplace_upsert_shopify_order                                           
+ {"updated": 0, "inserted": 1, "order_id": "f90b8b70-95e5-41a6-b221-0ce5bf1e2eb9", "unmatched": 0, "missing_cost": 1}
+                                                                              integration_event_store                                                                              
+ {"id": 1, "org_id": "eafcab29-8185-4372-a5eb-1e3889ccf452", "status": "processing", "stored": true, "duplicate": false, "integration_id": "87abd680-b483-4e56-87c8-beb9b10b3913"}
+             notify_once              
+ 1484f73e-afd2-406e-92c1-f41cc99913d0
+              set_config              
+ 91000000-0000-0000-0000-000000000001
+ Modul 03 data inserted
+ set_config 
+ after_up
+              set_config              
+ 91000000-0000-0000-0000-000000000001
+ after_up: data intact, isolation OK
+ set_config 
+ after_down
+              set_config              
+ 91000000-0000-0000-0000-000000000001
+ after_down: data intact, isolation OK
+schema after rollback == Phase 2B schema (pg_dump identical)
+── Phase 2B tests on the rolled-back schema
+ ALL PHASE 2B TESTS PASSED
+ set_config 
+ after_reup
+              set_config              
+ 91000000-0000-0000-0000-000000000001
+ after_reup: data intact, isolation OK
+── İ-3 marketplace tests after re-applying
+ ALL MARKETPLACE (İ-3) TESTS PASSED
+ALL İ-3 MARKETPLACE DATABASE CHECKS PASSED

@@ -1,0 +1,623 @@
+NOTICE:  database "t" does not exist, skipping
+→ migrate 20261121000100_core.sql
+→ migrate 20261121000200_shared_data.sql
+→ migrate 20261121000300_finance.sql
+→ migrate 20261121000400_ares_integrations.sql
+→ migrate 20261122000500_tenancy_core.sql
+→ migrate 20261122000600_tenancy_functions.sql
+→ migrate 20261122000700_tenancy_business_tables.sql
+→ migrate 20261122000800_audit_log.sql
+→ migrate 20261123000900_profiles_settings.sql
+psql:/home/claude/tradecore-ai/supabase/migrations/20261123000900_profiles_settings.sql:144: NOTICE:  storage schema not found — buckets and storage policies skipped
+→ migrate 20261123001000_notifications.sql
+psql:/home/claude/tradecore-ai/supabase/migrations/20261123001000_notifications.sql:211: NOTICE:  publication supabase_realtime not found — Realtime skipped
+→ migrate 20261123001100_search.sql
+     set_config     
+--------------------
+ public, extensions
+(1 row)
+
+→ migrate 20261123001200_mfa_enforcement.sql
+── Phase 1 tests
+              set_config              
+--------------------------------------
+ 11111111-1111-1111-1111-111111111111
+(1 row)
+
+              set_config              
+--------------------------------------
+ 22222222-2222-2222-2222-222222222222
+(1 row)
+
+        result        
+----------------------
+ ALL SQL TESTS PASSED
+(1 row)
+
+── Phase 2A tenancy tests
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ #  | result |                        name                         |       detail       
+----+--------+-----------------------------------------------------+--------------------
+  0 | PASS   | setup: team via invites                             | 
+  0 | PASS   | setup: business rows in A and B                     | 
+  1 | PASS   | A cannot read B: companies                          | visible=0
+  1 | PASS   | A cannot read B: products                           | visible=0
+  1 | PASS   | A cannot read B: saved_items                        | visible=0
+  1 | PASS   | A cannot read B: module_events                      | visible=0
+  1 | PASS   | A cannot read B: activity_log                       | visible=0
+  1 | PASS   | A cannot read B: financial_transactions             | visible=0
+  1 | PASS   | A cannot read B: exchange_rates                     | visible=0
+  1 | PASS   | A cannot read B: ares_conversations                 | visible=0
+  1 | PASS   | A cannot read B: ares_messages                      | visible=0
+  1 | PASS   | A cannot read B: integrations                       | visible=0
+  1 | PASS   | A cannot read B: finance_module_summary             | visible=0
+  1 | PASS   | A sees own rows (sanity)                            | visible=1
+  1 | PASS   | coverage: every table with user_id has org_id + RLS | 
+  2 | PASS   | insert companies into B                             | rejected: 42501
+  2 | PASS   | insert transaction into B                           | rejected: 42501
+  3 | PASS   | move company A→B                                    | rejected: 42501
+  4 | PASS   | A cannot update B: companies                        | affected=0
+  4 | PASS   | A cannot delete B: companies                        | affected=0
+  4 | PASS   | A cannot update B: products                         | affected=0
+  4 | PASS   | A cannot delete B: products                         | affected=0
+  4 | PASS   | A cannot update B: saved_items                      | affected=0
+  4 | PASS   | A cannot delete B: saved_items                      | affected=0
+  4 | PASS   | A cannot update B: module_events                    | affected=0
+  4 | PASS   | A cannot delete B: module_events                    | affected=0
+  4 | PASS   | A cannot update B: activity_log                     | affected=0
+  4 | PASS   | A cannot delete B: activity_log                     | affected=0
+  4 | PASS   | A cannot update B: financial_transactions           | affected=0
+  4 | PASS   | A cannot delete B: financial_transactions           | affected=0
+  4 | PASS   | A cannot update B: exchange_rates                   | affected=0
+  4 | PASS   | A cannot delete B: exchange_rates                   | affected=0
+  4 | PASS   | A cannot update B: ares_conversations               | affected=0
+  4 | PASS   | A cannot delete B: ares_conversations               | affected=0
+  4 | PASS   | A cannot update B: ares_messages                    | affected=0
+  4 | PASS   | A cannot delete B: ares_messages                    | affected=0
+  4 | PASS   | A cannot update B: integrations                     | affected=0
+  4 | PASS   | A cannot delete B: integrations                     | affected=0
+  5 | PASS   | product → B supplier                                | rejected: 42501
+  5 | PASS   | transaction → B counterparty                        | rejected: 42501
+  5 | PASS   | ARES message → B conversation                       | rejected: 42501
+  6 | PASS   | viewer cannot insert company                        | rejected: 42501
+  6 | PASS   | viewer can read companies                           | 
+  6 | PASS   | employee cannot read finance                        | 
+  6 | PASS   | employee cannot insert transaction                  | rejected: 42501
+  6 | PASS   | employee can write data                             | 
+  7 | PASS   | employee updates own membership                     | rejected: 42501
+  7 | PASS   | employee inserts membership                         | rejected: 42501
+  7 | PASS   | employee calls set_member_role                      | rejected: 42501
+  8 | PASS   | admin makes manager an owner                        | rejected: 42501
+  8 | PASS   | admin makes manager an admin                        | rejected: 42501
+  8 | PASS   | admin promotes self                                 | rejected: 42501
+  8 | PASS   | admin removes owner                                 | rejected: 42501
+  8 | PASS   | admin suspends owner                                | rejected: 42501
+  8 | PASS   | admin invites an owner                              | rejected: 42501
+  8 | PASS   | admin invites an admin                              | rejected: 42501
+  8 | PASS   | admin may set employee→manager                      | 
+  8 | PASS   | admin may set back manager→employee                 | 
+  9 | PASS   | last owner leaves                                   | rejected: 42501
+  9 | PASS   | last owner suspends self                            | rejected: 42501
+  9 | PASS   | last owner demotes self                             | rejected: 42501
+  9 | PASS   | direct delete of last owner (even as DB owner)      | rejected: 42501
+ 10 | PASS   | owner adds permission to viewer                     | rejected: 42501
+ 10 | PASS   | owner deletes system permission                     | rejected: 42501
+ 10 | PASS   | owner renames system role                           | rejected: 42501
+ 11 | PASS   | invite used with a different email                  | rejected: 42501
+ 11 | PASS   | forged token                                        | rejected: P0001
+ 11 | PASS   | valid invite accepted                               | 
+ 11 | PASS   | invite reused                                       | rejected: P0001
+ 11 | PASS   | revoked invite                                      | rejected: P0001
+ 11 | PASS   | expired invite                                      | rejected: P0001
+ 12 | PASS   | no plaintext token in organization_invites          | 
+ 12 | PASS   | token_hash column not readable by members           | rejected: 42501
+ 13 | PASS   | hacker not in B                                     | 
+ 13 | PASS   | hacker owns exactly one own org                     | 
+ 14 | PASS   | owner updates audit_log                             | rejected: 42501
+ 14 | PASS   | owner deletes audit_log                             | rejected: 42501
+ 14 | PASS   | owner inserts fake audit row                        | rejected: 42501
+ 14 | PASS   | owner truncates audit_log                           | rejected: 42501
+ 14 | PASS   | DB owner updates audit_log (trigger)                | rejected: 42501
+ 14 | PASS   | DB owner deletes audit_log (trigger)                | rejected: 42501
+ 14 | PASS   | DB owner truncates audit_log (trigger)              | rejected: 42501
+ 15 | PASS   | company insert is audited                           | 
+ 15 | PASS   | role change is audited                              | 
+ 15 | PASS   | every business table audited                        | 
+ 15 | PASS   | A cannot see B audit                                | 
+ 15 | PASS   | employee cannot read audit                          | 
+ 16 | PASS   | suspended sees no companies                         | 
+ 16 | PASS   | suspended cannot insert                             | rejected: 42501
+ 16 | PASS   | removed sees no companies                           | 
+ 16 | PASS   | removed cannot insert                               | rejected: 42501
+ 17 | PASS   | module outside plan not readable                    | 
+ 17 | PASS   | module inside plan readable                         | 
+ 17 | PASS   | module outside plan not writable                    | rejected: 42501
+ 18 | PASS   | has_permission(B) is false for A                    | 
+ 18 | PASS   | is_member(B) is false for A                         | 
+ 18 | PASS   | has_permission(A) is true for A owner               | 
+ 18 | PASS   | all SECURITY DEFINER functions set search_path      | 
+ 18 | PASS   | anon cannot execute any SECURITY DEFINER function   | 
+ 19 | PASS   | anon reads companies                                | rejected: 42501
+ 19 | PASS   | anon reads products                                 | rejected: 42501
+ 19 | PASS   | anon reads saved_items                              | rejected: 42501
+ 19 | PASS   | anon reads module_events                            | rejected: 42501
+ 19 | PASS   | anon reads activity_log                             | rejected: 42501
+ 19 | PASS   | anon reads financial_transactions                   | rejected: 42501
+ 19 | PASS   | anon reads exchange_rates                           | rejected: 42501
+ 19 | PASS   | anon reads ares_conversations                       | rejected: 42501
+ 19 | PASS   | anon reads ares_messages                            | rejected: 42501
+ 19 | PASS   | anon reads integrations                             | rejected: 42501
+ 19 | PASS   | anon calls create_invite                            | rejected: 42501
+ 19 | PASS   | anon reads organizations                            | rejected: 42501
+ 24 | PASS   | 10k-row RLS scan < 200 ms                           | rows=10002, 2.8 ms
+
+ passed | failed | scenarios 
+--------+--------+-----------
+    112 |      0 |        20
+
+DO
+          result          
+--------------------------
+ ALL TENANCY TESTS PASSED
+
+── permission matrix sync
+permission matrix in sync (125 pairs)
+── rollback cycle
+         result         
+------------------------
+ rollback seed inserted
+(1 row)
+
+psql:/home/claude/tradecore-ai/supabase/migrations/20261123000900_profiles_settings.sql:144: NOTICE:  storage schema not found — buckets and storage policies skipped
+psql:/home/claude/tradecore-ai/supabase/migrations/20261123001000_notifications.sql:211: NOTICE:  publication supabase_realtime not found — Realtime skipped
+ set_config 
+------------
+ after_up
+(1 row)
+
+psql:/home/claude/tradecore-ai/tests/sql/rollback_check.sql:39: NOTICE:  [after_up] OK — all rows and totals intact
+              set_config              
+--------------------------------------
+ d0000000-0000-0000-0000-000000000001
+(1 row)
+
+               result                
+-------------------------------------
+ after_up: data intact, isolation OK
+(1 row)
+
+← rollback 20261123001200_mfa_enforcement.down.sql
+← rollback 20261123001100_search.down.sql
+← rollback 20261123001000_notifications.down.sql
+← rollback 20261123000900_profiles_settings.down.sql
+← rollback 20261122000800_audit_log.down.sql
+← rollback 20261122000700_tenancy_business_tables.down.sql
+← rollback 20261122000600_tenancy_functions.down.sql
+← rollback 20261122000500_tenancy_core.down.sql
+ set_config 
+------------
+ after_down
+(1 row)
+
+psql:/home/claude/tradecore-ai/tests/sql/rollback_check.sql:39: NOTICE:  [after_down] OK — all rows and totals intact
+              set_config              
+--------------------------------------
+ d0000000-0000-0000-0000-000000000001
+(1 row)
+
+                result                 
+---------------------------------------
+ after_down: data intact, isolation OK
+(1 row)
+
+psql:/home/claude/tradecore-ai/supabase/migrations/20261123000900_profiles_settings.sql:144: NOTICE:  storage schema not found — buckets and storage policies skipped
+psql:/home/claude/tradecore-ai/supabase/migrations/20261123001000_notifications.sql:211: NOTICE:  publication supabase_realtime not found — Realtime skipped
+psql:/home/claude/tradecore-ai/supabase/migrations/20261123001100_search.sql:24: NOTICE:  schema "extensions" already exists, skipping
+psql:/home/claude/tradecore-ai/supabase/migrations/20261123001100_search.sql:26: NOTICE:  extension "pg_trgm" already exists, skipping
+ set_config 
+------------
+ after_reup
+(1 row)
+
+psql:/home/claude/tradecore-ai/tests/sql/rollback_check.sql:39: NOTICE:  [after_reup] OK — all rows and totals intact
+              set_config              
+--------------------------------------
+ d0000000-0000-0000-0000-000000000001
+(1 row)
+
+                result                 
+---------------------------------------
+ after_reup: data intact, isolation OK
+(1 row)
+
+ALL DATABASE CHECKS PASSED
+exit=0

@@ -1,0 +1,10 @@
+AZ keys: 480 · EN keys: 622 · RU keys: 622
+Shared names translated: 142 per language
+Database messages checked: 26 · server messages checked: 25
+
+Problems (0):
+
+Notes (0):
+
+Unused keys (0): —
+exit=0

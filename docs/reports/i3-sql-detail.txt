@@ -1,0 +1,307 @@
+İ-3 · Modul 03 testləri — hər yoxlama (303)
+ qrup | result |                                                  name                                                   |                                                        detail                                                        
+ M00  | PASS   | setup: komandalar dəvətlə quruldu                                                                       | 
+ M00  | PASS   | setup: P kataloqu server funksiyası ilə idxal edildi                                                    | {"products": 2, "variants": 2}
+ M00  | PASS   | setup: Q kataloqu idxal edildi                                                                          | {"products": 1, "variants": 0}
+ M00  | PASS   | setup: sahib xərcləri daxil edir                                                                        | 
+ M00  | PASS   | setup: sahib variant xərcini daxil edir                                                                 | 
+ M00  | PASS   | setup: sahib Modul 03 parametrlərini yaradır                                                            | 
+ M00  | PASS   | setup: işçi əl ilə məhsul yaradır                                                                       | 
+ M00  | PASS   | setup: Shopify sifarişi idxal edildi                                                                    | {"updated": 0, "inserted": 2, "order_id": "81af1ead-e429-47ff-9599-19e9588b79f0", "unmatched": 1, "missing_cost": 1}
+ M00  | PASS   | setup: Q sifarişi idxal edildi                                                                          | {"updated": 0, "inserted": 1, "order_id": "5aab6003-8982-4c55-a084-692bba8946db", "unmatched": 0, "missing_cost": 1}
+ M00  | PASS   | setup: webhook hadisələri saxlanıldı                                                                    | 
+ M01  | PASS   | 9 yeni cədvəl var və hamısında RLS açıqdır                                                              | 
+ M01  | PASS   | hər yeni cədvəldə org_id NOT NULL-dur                                                                   | 
+ M01  | PASS   | bütün pul sütunları (_minor) bigint-dir                                                                 | 
+ M01  | PASS   | notifications.dedupe_key əlavə olunub (boş buraxıla bilər)                                              | 
+ M01  | PASS   | integrations: Shopify domeni üzrə unikal indeks                                                         | 
+ M01  | PASS   | products cədvəlinin sütunları dəyişməyib                                                                | 
+ M01  | PASS   | listinq products-a 1:1 bağlıdır (product_id unikal)                                                     | 
+ M01  | PASS   | listinq → products: ON DELETE RESTRICT                                                                  | 
+ M01  | PASS   | sifariş sətri → listinq: ON DELETE RESTRICT (D6)                                                        | 
+ M01  | PASS   | setup: yoxlama məhsulu                                                                                  | 
+ M01  | PASS   | mənfi alış qiyməti rədd edilir                                                                          | rejected: 23514 new row for relation "marketplace_listings" violates check constraint "marketplace_listing
+ M01  | PASS   | Shopify CDN-dən kənar şəkil linki rədd edilir                                                           | rejected: 23514 new row for relation "marketplace_listings" violates check constraint "marketplace_listing
+ M01  | PASS   | javascript: təchizatçı linki rədd edilir                                                                | rejected: 23514 new row for relation "marketplace_listings" violates check constraint "marketplace_listing
+ M01  | PASS   | yad domenli Admin linki rədd edilir                                                                     | rejected: 23514 new row for relation "marketplace_listings" violates check constraint "marketplace_listing
+ M01  | PASS   | naməlum məhsul statusu rədd edilir                                                                      | rejected: 23514 new row for relation "marketplace_listings" violates check constraint "marketplace_listing
+ M01  | PASS   | mənfi stok rədd edilir                                                                                  | rejected: 23514 new row for relation "marketplace_listings" violates check constraint "marketplace_listing
+ M02  | PASS   | p_owner: listinqləri oxuyur                                                                             | 
+ M02  | PASS   | p_owner: variantları oxuyur                                                                             | 
+ M02  | PASS   | p_owner: sifarişləri oxuyur                                                                             | 
+ M02  | PASS   | p_owner: sifariş sətirlərini oxuyur                                                                     | 
+ M02  | PASS   | p_owner: Modul 03 parametrlərini oxuyur                                                                 | 
+ M02  | PASS   | p_owner: əl ilə listinq yaradır                                                                         | 
+ M02  | PASS   | p_owner: listinqi redaktə edir                                                                          | 
+ M02  | PASS   | p_owner: sifariş statusunu dəyişir                                                                      | 
+ M02  | PASS   | p_owner: təchizatçı təklifi yaradır                                                                     | 
+ M02  | PASS   | p_owner: parametrləri dəyişir                                                                           | 
+ M02  | PASS   | p_owner: webhook jurnalını oxuyur                                                                       | 
+ M02  | PASS   | p_owner: sifarişi birbaşa yarada bilmir (yalnız funksiya)                                               | rejected: 42501 permission denied for table marketplace_orders
+ M02  | PASS   | p_owner: sifariş sətrini birbaşa yarada bilmir                                                          | rejected: 42501 permission denied for table marketplace_order_lines
+ M02  | PASS   | p_owner: qiymət tarixçəsinə yaza bilmir                                                                 | rejected: 42501 permission denied for table supplier_offer_prices
+ M02  | PASS   | p_owner: webhook jurnalına yaza bilmir                                                                  | rejected: 42501 permission denied for table integration_events
+ M02  | PASS   | p_admin: listinqləri oxuyur                                                                             | 
+ M02  | PASS   | p_admin: variantları oxuyur                                                                             | 
+ M02  | PASS   | p_admin: sifarişləri oxuyur                                                                             | 
+ M02  | PASS   | p_admin: sifariş sətirlərini oxuyur                                                                     | 
+ M02  | PASS   | p_admin: Modul 03 parametrlərini oxuyur                                                                 | 
+ M02  | PASS   | p_admin: əl ilə listinq yaradır                                                                         | 
+ M02  | PASS   | p_admin: listinqi redaktə edir                                                                          | 
+ M02  | PASS   | p_admin: sifariş statusunu dəyişir                                                                      | 
+ M02  | PASS   | p_admin: təchizatçı təklifi yaradır                                                                     | 
+ M02  | PASS   | p_admin: parametrləri dəyişir                                                                           | 
+ M02  | PASS   | p_admin: webhook jurnalını oxuyur                                                                       | 
+ M02  | PASS   | p_admin: sifarişi birbaşa yarada bilmir (yalnız funksiya)                                               | rejected: 42501 permission denied for table marketplace_orders
+ M02  | PASS   | p_admin: sifariş sətrini birbaşa yarada bilmir                                                          | rejected: 42501 permission denied for table marketplace_order_lines
+ M02  | PASS   | p_admin: qiymət tarixçəsinə yaza bilmir                                                                 | rejected: 42501 permission denied for table supplier_offer_prices
+ M02  | PASS   | p_admin: webhook jurnalına yaza bilmir                                                                  | rejected: 42501 permission denied for table integration_events
+ M02  | PASS   | p_manager: listinqləri oxuyur                                                                           | 
+ M02  | PASS   | p_manager: variantları oxuyur                                                                           | 
+ M02  | PASS   | p_manager: sifarişləri oxuyur                                                                           | 
+ M02  | PASS   | p_manager: sifariş sətirlərini oxuyur                                                                   | 
+ M02  | PASS   | p_manager: Modul 03 parametrlərini oxuyur                                                               | 
+ M02  | PASS   | p_manager: əl ilə listinq yaradır                                                                       | 
+ M02  | PASS   | p_manager: listinqi redaktə edir                                                                        | 
+ M02  | PASS   | p_manager: sifariş statusunu dəyişir                                                                    | 
+ M02  | PASS   | p_manager: təchizatçı təklifi yaradır                                                                   | 
+ M02  | PASS   | p_manager: parametrləri dəyişə bilmir                                                                   | 0 row(s) affected
+ M02  | PASS   | p_manager: webhook jurnalını görmür                                                                     | 
+ M02  | PASS   | p_manager: sifarişi birbaşa yarada bilmir (yalnız funksiya)                                             | rejected: 42501 permission denied for table marketplace_orders
+ M02  | PASS   | p_manager: sifariş sətrini birbaşa yarada bilmir                                                        | rejected: 42501 permission denied for table marketplace_order_lines
+ M02  | PASS   | p_manager: qiymət tarixçəsinə yaza bilmir                                                               | rejected: 42501 permission denied for table supplier_offer_prices
+ M02  | PASS   | p_manager: webhook jurnalına yaza bilmir                                                                | rejected: 42501 permission denied for table integration_events
+ M02  | PASS   | p_employee: listinqləri oxuyur                                                                          | 
+ M02  | PASS   | p_employee: variantları oxuyur                                                                          | 
+ M02  | PASS   | p_employee: sifarişləri oxuyur                                                                          | 
+ M02  | PASS   | p_employee: sifariş sətirlərini oxuyur                                                                  | 
+ M02  | PASS   | p_employee: Modul 03 parametrlərini oxuyur                                                              | 
+ M02  | PASS   | p_employee: əl ilə listinq yaradır                                                                      | 
+ M02  | PASS   | p_employee: listinqi redaktə edir                                                                       | 
+ M02  | PASS   | p_employee: sifariş statusunu dəyişir                                                                   | 
+ M02  | PASS   | p_employee: təchizatçı təklifi yaradır                                                                  | 
+ M02  | PASS   | p_employee: parametrləri dəyişə bilmir                                                                  | 0 row(s) affected
+ M02  | PASS   | p_employee: webhook jurnalını görmür                                                                    | 
+ M02  | PASS   | p_employee: sifarişi birbaşa yarada bilmir (yalnız funksiya)                                            | rejected: 42501 permission denied for table marketplace_orders
+ M02  | PASS   | p_employee: sifariş sətrini birbaşa yarada bilmir                                                       | rejected: 42501 permission denied for table marketplace_order_lines
+ M02  | PASS   | p_employee: qiymət tarixçəsinə yaza bilmir                                                              | rejected: 42501 permission denied for table supplier_offer_prices
+ M02  | PASS   | p_employee: webhook jurnalına yaza bilmir                                                               | rejected: 42501 permission denied for table integration_events
+ M02  | PASS   | p_viewer: listinqləri oxuyur                                                                            | 
+ M02  | PASS   | p_viewer: variantları oxuyur                                                                            | 
+ M02  | PASS   | p_viewer: sifarişləri oxuyur                                                                            | 
+ M02  | PASS   | p_viewer: sifariş sətirlərini oxuyur                                                                    | 
+ M02  | PASS   | p_viewer: Modul 03 parametrlərini oxuyur                                                                | 
+ M02  | PASS   | p_viewer: listinq yarada bilmir                                                                         | rejected: 42501 new row violates row-level security policy for table "products"
+ M02  | PASS   | p_viewer: listinqi redaktə edə bilmir                                                                   | 0 row(s) affected
+ M02  | PASS   | p_viewer: sifarişi dəyişə bilmir                                                                        | 0 row(s) affected
+ M02  | PASS   | p_viewer: sifarişi silə bilmir                                                                          | 0 row(s) affected
+ M02  | PASS   | p_viewer: təchizatçı təklifi yarada bilmir                                                              | rejected: 42501 new row violates row-level security policy for table "supplier_offers"
+ M02  | PASS   | p_viewer: parametrləri dəyişə bilmir                                                                    | 0 row(s) affected
+ M02  | PASS   | p_viewer: webhook jurnalını görmür                                                                      | 
+ M02  | PASS   | p_viewer: sifarişi birbaşa yarada bilmir (yalnız funksiya)                                              | rejected: 42501 permission denied for table marketplace_orders
+ M02  | PASS   | p_viewer: sifariş sətrini birbaşa yarada bilmir                                                         | rejected: 42501 permission denied for table marketplace_order_lines
+ M02  | PASS   | p_viewer: qiymət tarixçəsinə yaza bilmir                                                                | rejected: 42501 permission denied for table supplier_offer_prices
+ M02  | PASS   | p_viewer: webhook jurnalına yaza bilmir                                                                 | rejected: 42501 permission denied for table integration_events
+ M03  | PASS   | Q sahibi P-nin marketplace_listings sətirlərini görmür                                                  | 
+ M03  | PASS   | Q sahibi P-nin marketplace_variants sətirlərini görmür                                                  | 
+ M03  | PASS   | Q sahibi P-nin marketplace_orders sətirlərini görmür                                                    | 
+ M03  | PASS   | Q sahibi P-nin marketplace_order_lines sətirlərini görmür                                               | 
+ M03  | PASS   | Q sahibi P-nin marketplace_settings sətirlərini görmür                                                  | 
+ M03  | PASS   | Q sahibi P-nin marketplace_calc_prefs sətirlərini görmür                                                | 
+ M03  | PASS   | Q sahibi P-nin supplier_offers sətirlərini görmür                                                       | 
+ M03  | PASS   | Q sahibi P-nin supplier_offer_prices sətirlərini görmür                                                 | 
+ M03  | PASS   | Q sahibi P-nin integration_events sətirlərini görmür                                                    | 
+ M03  | PASS   | Q sahibi öz listinqini görür                                                                            | 
+ M03  | PASS   | Q sahibi P listinqini dəyişə bilmir                                                                     | 0 row(s) affected
+ M03  | PASS   | Q sahibi P listinqini silə bilmir                                                                       | 0 row(s) affected
+ M03  | PASS   | Q sahibi P sifarişini dəyişə bilmir                                                                     | 0 row(s) affected
+ M03  | PASS   | Q sahibi P məhsuluna listinq bağlaya bilmir                                                             | rejected: 42501 Başqa şirkətin qeydinə istinad etmək olmaz (product_id)
+ M03  | PASS   | Q sahibi P sifarişi yarada bilmir (funksiya)                                                            | rejected: 42501 Bu şirkətdə sifariş yaratmaq icazəniz yoxdur
+ M03  | PASS   | Q sahibi P listinq tarixçəsini görmür                                                                   | 
+ M03  | PASS   | Q sahibi P mağaza vəziyyətini görmür                                                                    | 
+ M03  | PASS   | Q işçisi P məhsuluna təchizatçı təklifi bağlaya bilmir                                                  | rejected: 42501 Başqa şirkətin qeydinə istinad etmək olmaz (product_id)
+ M03  | PASS   | P işçisi Q sətirlərini görmür                                                                           | 
+ M03  | PASS   | Q mağazasının hadisəsi Q şirkətinə yazıldı                                                              | 
+ M03  | PASS   | server: Q inteqrasiyası ilə P-yə sifariş yazmaq olmur                                                   | rejected: 42501 İnteqrasiya bu şirkətə aid deyil
+ M04  | PASS   | sahib (aal2) işçi rolu üçün 2FA tələb edir                                                              | 
+ M04  | PASS   | işçi aal1 ilə listinqləri görmür                                                                        | 
+ M04  | PASS   | işçi aal1 ilə sifarişləri görmür                                                                        | 
+ M04  | PASS   | işçi aal1 ilə təchizatçı təkliflərini görmür                                                            | 
+ M04  | PASS   | işçi aal1 ilə sifariş yarada bilmir                                                                     | rejected: 42501 Bu şirkətdə sifariş yaratmaq icazəniz yoxdur
+ M04  | PASS   | işçi aal1 ilə tarixçəni görmür                                                                          | 
+ M04  | PASS   | işçi aal2 ilə listinqləri görür                                                                         | 
+ M04  | PASS   | siyasətdə olmayan rol (menecer) aal1 ilə görür                                                          | 
+ M04  | PASS   | siyasət geri götürülür                                                                                  | 
+ M05  | PASS   | Shopify sətrində satışı dəyişmək olmur                                                                  | 42501: Shopify sifarişinin maliyyə rəqəmləri dəyişdirilə bilməz
+ M05  | PASS   | Shopify sətrində refund_azn_minor dəyişmir                                                              | rejected: 42501 Shopify sifarişinin maliyyə rəqəmləri dəyişdirilə bilməz
+ M05  | PASS   | Shopify sətrində fee_azn_minor dəyişmir                                                                 | rejected: 42501 Shopify sifarişinin maliyyə rəqəmləri dəyişdirilə bilməz
+ M05  | PASS   | Shopify sətrində cost_azn_minor dəyişmir                                                                | rejected: 42501 Shopify sifarişinin maliyyə rəqəmləri dəyişdirilə bilməz
+ M05  | PASS   | Shopify sətrində shipping_income_azn_minor dəyişmir                                                     | rejected: 42501 Shopify sifarişinin maliyyə rəqəmləri dəyişdirilə bilməz
+ M05  | PASS   | Shopify sətrində tax_azn_minor dəyişmir                                                                 | rejected: 42501 Shopify sifarişinin maliyyə rəqəmləri dəyişdirilə bilməz
+ M05  | PASS   | Shopify sətrində discount_azn_minor dəyişmir                                                            | rejected: 42501 Shopify sifarişinin maliyyə rəqəmləri dəyişdirilə bilməz
+ M05  | PASS   | Shopify sətrində quantity dəyişmir                                                                      | rejected: 42501 Shopify sifarişinin maliyyə rəqəmləri dəyişdirilə bilməz
+ M05  | PASS   | Shopify sətrində fx_rate_to_base dəyişmir                                                               | rejected: 42501 Shopify sifarişinin maliyyə rəqəmləri dəyişdirilə bilməz
+ M05  | PASS   | Shopify sətrində cost_missing dəyişmir                                                                  | rejected: 42501 Shopify sifarişinin maliyyə rəqəmləri dəyişdirilə bilməz
+ M05  | PASS   | Shopify sifarişində valyuta dəyişmir                                                                    | rejected: 42501 Sifarişin valyutası, məzənnəsi, tarixi və mənbəyi dəyişdirilə bilməz
+ M05  | PASS   | Shopify sifarişində məzənnə dəyişmir                                                                    | rejected: 42501 Sifarişin valyutası, məzənnəsi, tarixi və mənbəyi dəyişdirilə bilməz
+ M05  | PASS   | Shopify sifarişində müştəri adı dəyişmir                                                                | rejected: 42501 Shopify sifarişinin bu sahələri yalnız Shopify-dan yenilənir
+ M05  | PASS   | Shopify ödəniş statusu dəyişmir                                                                         | rejected: 42501 Shopify sifarişinin bu sahələri yalnız Shopify-dan yenilənir
+ M05  | PASS   | Shopify sifariş tarixi dəyişmir                                                                         | rejected: 42501 Sifarişin valyutası, məzənnəsi, tarixi və mənbəyi dəyişdirilə bilməz
+ M05  | PASS   | status, izləmə, daşıyıcı, qeyd dəyişir                                                                  | 
+ M05  | PASS   | təchizatçı sifarişi sahələri dəyişir                                                                    | 
+ M05  | PASS   | əl ilə sifarişdə satış redaktə olunur                                                                   | 
+ M05  | PASS   | Y4: istifadəçi Shopify kanallı listinq yarada bilmir                                                    | rejected: 42501 new row violates row-level security policy for table "marketplace_listings"
+ M05  | PASS   | Y4: listinqin Shopify ID-si dəyişmir                                                                    | rejected: 42501 Shopify identifikatorları və məhsul bağlantısı dəyişdirilə bilməz
+ M05  | PASS   | Y4: listinqin kanalı dəyişmir                                                                           | rejected: 42501 Shopify identifikatorları və məhsul bağlantısı dəyişdirilə bilməz
+ M05  | PASS   | Y4: listinqin məhsul bağlantısı dəyişmir                                                                | rejected: 42501 Shopify identifikatorları və məhsul bağlantısı dəyişdirilə bilməz
+ M05  | PASS   | Y4: variantın inventar ID-si dəyişmir                                                                   | rejected: 42501 Shopify variant identifikatorları dəyişdirilə bilməz
+ M05  | PASS   | Y4: istifadəçi variant yarada bilmir                                                                    | rejected: 42501 permission denied for table marketplace_variants
+ M05  | PASS   | sifariş sətrini birbaşa silmək olmur                                                                    | rejected: 42501
+ M05  | PASS   | Shopify listinqində satış qiyməti və xərclər redaktə olunur                                             | 
+ M05  | PASS   | Y5: dondurulmuş sətir dəyişməyib (8500 / 300 / 3800)                                                    | 
+ M06  | PASS   | təkrar idxal: 2 yeniləndi, 1 yeni sətir                                                                 | {"updated": 2, "inserted": 1, "order_id": "81af1ead-e429-47ff-9599-19e9588b79f0", "unmatched": 1, "missing_cost": 0}
+ M06  | PASS   | satış, çatdırılma, komissiya dondurulub (8500 / 850 / 300)                                              | 
+ M06  | PASS   | maya artıq var idisə dəyişmir (3800)                                                                    | 
+ M06  | PASS   | refund ilkin məzənnə ilə: 1800 / 1.80 × 1.70 = 1700                                                     | 
+ M06  | PASS   | Y17: sonradan əlavə olunan sətir öz məzənnəsini saxlayır (1.80), refund onunla: 777 / 1.79 × 1.80 = 781 | 
+ M06  | PASS   | ilk sətirlərin dondurulmuş məzənnəsi 1.70 qalır                                                         | 
+ M06  | PASS   | çatışmayan maya bir dəfə dolur (900), sonra dəyişmir                                                    | 
+ M06  | PASS   | statuslar yenilənir, valyuta/məzənnə/tarix dondurulur                                                   | 
+ M06  | PASS   | boş gələn e-poçt köhnəni silmir                                                                         | 
+ M06  | PASS   | istifadəçinin yazdığı izləmə nömrəsi idxalda qalır                                                      | 
+ M06  | PASS   | sifarişdə 3 sətir, təkrar sətir yoxdur                                                                  | 
+ M06  | PASS   | uyğunsuz sətir idxal olunur, listinqi boşdur                                                            | 
+ M06  | PASS   | Y6: server sətirlərinin yaradanı mağazanı qoşan istifadəçidir                                           | 
+ M06  | PASS   | kataloq sinxronizasiyası xərcləri üzərinə yazmır (800/300/100)                                          | 
+ M06  | PASS   | kataloq sinxronizasiyası variant xərcini üzərinə yazmır (1500/400)                                      | 
+ M06  | PASS   | satış qiyməti və ad yenilənir                                                                           | 
+ M06  | PASS   | Shopify məhsulu kataloqda: mənbə shopify, modul marketplace, verified                                   | 
+ M07  | PASS   | eyni webhook ikinci dəfə saxlanılmır (duplicate)                                                        | 
+ M07  | PASS   | jurnalda wh-1 bir dəfədir                                                                               | 
+ M07  | PASS   | eyni dedupe_key ilə bildiriş bir dəfə yaranır                                                           | 
+ M07  | PASS   | uyğunsuz sətir bildirişi 3 idxaldan sonra 1 dənədir (sahib)                                             | 
+ M07  | PASS   | uyğunsuz sətir bildirişi yazma icazəli 4 üzvə gedir, müşahidəçiyə yox                                   | 
+ M08  | PASS   | variant_count = 2                                                                                       | 
+ M08  | PASS   | listinq stoku = variantların cəmi (8 + 3 = 11)                                                          | 
+ M08  | PASS   | işçi variant stokunu 0 edir                                                                             | 
+ M08  | PASS   | listinq stoku yenidən hesablanır (8)                                                                    | 
+ M08  | PASS   | stok 20 → 3                                                                                             | 
+ M08  | PASS   | stok 3 → 2 (yenə aşağı)                                                                                 | 
+ M08  | PASS   | həddi keçəndə hər yazıcıya 1 az-stok bildirişi                                                          | 
+ M08  | PASS   | müşahidəçi az-stok bildirişi almır                                                                      | 
+ M08  | PASS   | stok 2 → 10 → 4                                                                                         | 
+ M08  | PASS   | stok 10 → 4                                                                                             | 
+ M08  | PASS   | yenidən keçəndə ikinci bildiriş yaranır                                                                 | 
+ M08  | PASS   | işçi USD təklif əlavə edir (5.00 × 1.70)                                                                | 
+ M08  | PASS   | AZN qarşılığı avtomatik: 850 / 170                                                                      | 
+ M08  | PASS   | yaradılanda tarixçəyə 1 sətir                                                                           | 
+ M08  | PASS   | qiymət 5.00 → 6.00                                                                                      | 
+ M08  | PASS   | yalnız qeyd dəyişir                                                                                     | 
+ M08  | PASS   | ikinci əsas təchizatçı rədd edilir                                                                      | rejected: 23505 duplicate key value violates unique constraint "supplier_offers_one_primary_uq"
+ M08  | PASS   | min gün > max gün rədd edilir                                                                           | rejected: 23514 new row for relation "supplier_offers" violates check constraint "supplier_offers_days"
+ M08  | PASS   | qiymət dəyişəndə tarixçə 2 sətir, qeyd dəyişəndə artmır                                                 | 
+ M08  | PASS   | qiymət dəyişikliyi bildirişi yazıcılara gedir                                                           | 
+ M08  | PASS   | naməlum inventar elementi nəzərə alınmır                                                                | 
+ M08  | PASS   | inventar: variant 6, listinq cəmi 6; variantsız listinq 15                                              | 
+ M09  | PASS   | işçi əl ilə sifariş yaradır (stok 3, miqdar 2)                                                          | 
+ M09  | PASS   | stok 3 → 1 azaldı                                                                                       | 
+ M09  | PASS   | stok çatmırsa sifariş rədd edilir                                                                       | P0001: Stok kifayət etmir. Mövcud stok: 1
+ M09  | PASS   | rədd edilən sifariş yazılmayıb, stok dəyişməyib                                                         | 
+ M09  | PASS   | iki sətir birlikdə stoku aşırsa hamısı rədd edilir (atomik)                                             | rejected: P0001 Stok kifayət etmir. Mövcud stok: 0
+ M09  | PASS   | atomik rədddən sonra sifariş yoxdur, stok 1                                                             | 
+ M09  | PASS   | D7: eyni əl ilə sifariş nömrəsi rədd edilir                                                             | 23505: Bu nömrəli sifariş artıq var: M-1
+ M09  | PASS   | variantlı sifariş variant stokunu azaldır                                                               | 
+ M09  | PASS   | müşahidəçi sifariş yarada bilmir                                                                        | rejected: 42501 Bu şirkətdə sifariş yaratmaq icazəniz yoxdur
+ M09  | PASS   | əl ilə sifariş: kanal manual, valyuta AZN, yaradan işçi                                                 | 
+ M10  | PASS   | sahib Shopify sifarişini silə bilmir                                                                    | 0 row(s) affected
+ M10  | PASS   | Shopify sifarişi arxivləşdirilir                                                                        | 
+ M10  | PASS   | idxal arxivi geri açmır və sifarişi təkrarlamır                                                         | 
+ M10  | PASS   | arxivdən çıxarmaq olur                                                                                  | 
+ M10  | PASS   | əl ilə sifariş silinir                                                                                  | 
+ M10  | PASS   | silinən əl ilə sifarişin sətirləri də silinib                                                           | 
+ M11  | PASS   | təmizləmə 1 hadisəni təmizləyir                                                                         | 
+ M11  | PASS   | 31 günlük hadisənin məzmunu silindi, qeyd qaldı                                                         | 
+ M11  | PASS   | 29 günlük hadisənin məzmunu qalır                                                                       | 
+ M11  | PASS   | sifariş, sətirlər, müştəri adı və e-poçtu qalır                                                         | 
+ M11  | PASS   | Y1: webhook jurnalı audit jurnalına yazılmır                                                            | 
+ M11  | PASS   | Y1: ünvan, telefon, IP audit jurnalında yoxdur                                                          | 
+ M11  | PASS   | 5 uğursuz cəhddən sonra 1 sinxronizasiya xətası bildirişi                                               | 
+ M12  | PASS   | sifarişi olan məhsul silinmir, səbəb göstərilir                                                         | P0001: Bu məhsulun 2 sifariş sətri var. Sifariş tarixçəsi itməsin deyə onu silmək olmur. Qaralama edə bilərsiniz.
+ M12  | PASS   | silinməyən listinq yerindədir                                                                           | 
+ M12  | PASS   | sifarişi olmayan Modul 03 məhsulu silinir                                                               | 
+ M12  | PASS   | başqa modulun məhsulunun listinqi silinir                                                               | 
+ M12  | PASS   | listinqi olan məhsulu kataloqdan birbaşa silmək olmur                                                   | rejected: 23503 update or delete on table "products" violates foreign key constraint "marketplace_listings
+ M12  | PASS   | müşahidəçi məhsul silə bilmir                                                                           | rejected: 42501 Bu məhsulu silmək icazəniz yoxdur
+ M12  | PASS   | Modul 03 məhsulu: listinq, kataloq sətri və təklif silindi                                              | 
+ M12  | PASS   | başqa modulun məhsulu kataloqda qalır                                                                   | 
+ M13  | PASS   | brauzer (authenticated) çağıra bilmir: public.notify_once                                               | 
+ M13  | PASS   | anon çağıra bilmir: public.notify_once                                                                  | 
+ M13  | PASS   | server (service_role) çağıra bilir: public.notify_once                                                  | 
+ M13  | PASS   | brauzer (authenticated) çağıra bilmir: public.notify_marketplace                                        | 
+ M13  | PASS   | anon çağıra bilmir: public.notify_marketplace                                                           | 
+ M13  | PASS   | server (service_role) çağıra bilir: public.notify_marketplace                                           | 
+ M13  | PASS   | brauzer (authenticated) çağıra bilmir: public.integration_event_store                                   | 
+ M13  | PASS   | anon çağıra bilmir: public.integration_event_store                                                      | 
+ M13  | PASS   | server (service_role) çağıra bilir: public.integration_event_store                                      | 
+ M13  | PASS   | brauzer (authenticated) çağıra bilmir: public.integration_event_finish                                  | 
+ M13  | PASS   | anon çağıra bilmir: public.integration_event_finish                                                     | 
+ M13  | PASS   | server (service_role) çağıra bilir: public.integration_event_finish                                     | 
+ M13  | PASS   | brauzer (authenticated) çağıra bilmir: public.integration_events_purge                                  | 
+ M13  | PASS   | anon çağıra bilmir: public.integration_events_purge                                                     | 
+ M13  | PASS   | server (service_role) çağıra bilir: public.integration_events_purge                                     | 
+ M13  | PASS   | brauzer (authenticated) çağıra bilmir: public.marketplace_upsert_catalog                                | 
+ M13  | PASS   | anon çağıra bilmir: public.marketplace_upsert_catalog                                                   | 
+ M13  | PASS   | server (service_role) çağıra bilir: public.marketplace_upsert_catalog                                   | 
+ M13  | PASS   | brauzer (authenticated) çağıra bilmir: public.marketplace_upsert_shopify_order                          | 
+ M13  | PASS   | anon çağıra bilmir: public.marketplace_upsert_shopify_order                                             | 
+ M13  | PASS   | server (service_role) çağıra bilir: public.marketplace_upsert_shopify_order                             | 
+ M13  | PASS   | brauzer (authenticated) çağıra bilmir: public.marketplace_apply_inventory                               | 
+ M13  | PASS   | anon çağıra bilmir: public.marketplace_apply_inventory                                                  | 
+ M13  | PASS   | server (service_role) çağıra bilir: public.marketplace_apply_inventory                                  | 
+ M13  | PASS   | istifadəçi çağıra bilir, anon yox: public.marketplace_create_manual_order                               | 
+ M13  | PASS   | istifadəçi çağıra bilir, anon yox: public.marketplace_history                                           | 
+ M13  | PASS   | istifadəçi çağıra bilir, anon yox: public.marketplace_store_status                                      | 
+ M13  | PASS   | istifadəçi çağıra bilir, anon yox: public.marketplace_delete_listing                                    | 
+ M13  | PASS   | bütün SECURITY DEFINER funksiyaları search_path təyin edir                                              | 
+ M13  | PASS   | anon heç bir SECURITY DEFINER funksiyasını çağıra bilmir                                                | 
+ M13  | PASS   | authenticated-dən TRUNCATE/REFERENCES/TRIGGER alınıb                                                    | 
+ M13  | PASS   | sahib belə server funksiyasını brauzerdən çağıra bilmir                                                 | rejected: 42501 permission denied for function marketplace_upsert_catalog
+ M13  | PASS   | anon oxuya bilmir: marketplace_listings                                                                 | rejected: 42501 permission denied for table marketplace_listings
+ M13  | PASS   | anon oxuya bilmir: marketplace_variants                                                                 | rejected: 42501 permission denied for table marketplace_variants
+ M13  | PASS   | anon oxuya bilmir: marketplace_orders                                                                   | rejected: 42501 permission denied for table marketplace_orders
+ M13  | PASS   | anon oxuya bilmir: marketplace_order_lines                                                              | rejected: 42501 permission denied for table marketplace_order_lines
+ M13  | PASS   | anon oxuya bilmir: marketplace_settings                                                                 | rejected: 42501 permission denied for table marketplace_settings
+ M13  | PASS   | anon oxuya bilmir: marketplace_calc_prefs                                                               | rejected: 42501 permission denied for table marketplace_calc_prefs
+ M13  | PASS   | anon oxuya bilmir: supplier_offers                                                                      | rejected: 42501 permission denied for table supplier_offers
+ M13  | PASS   | anon oxuya bilmir: supplier_offer_prices                                                                | rejected: 42501 permission denied for table supplier_offer_prices
+ M13  | PASS   | anon oxuya bilmir: integration_events                                                                   | rejected: 42501 permission denied for table integration_events
+ M14  | PASS   | canlı NovaNest domeni bloklanır (marketplace_blocked_shop)                                              | 
+ M14  | PASS   | NovaNest webhook-u saxlanılmır                                                                          | 
+ M14  | PASS   | NovaNest inteqrasiyası ilə kataloq idxalı rədd edilir                                                   | 42501: Bu Shopify mağazası qadağan siyahısındadır (canlı mağaza): novanest991.myshopify.com
+ M14  | PASS   | NovaNest inteqrasiyası ilə sifariş idxalı rədd edilir                                                   | 42501: Bu Shopify mağazası qadağan siyahısındadır (canlı mağaza): novanest991.myshopify.com
+ M14  | PASS   | bağlı olmayan mağazanın webhook-u saxlanılmır                                                           | 
+ M14  | PASS   | Y9: dəstəklənməyən valyuta (CAD) aydın mesajla rədd edilir                                              | 22023: Valyuta dəstəklənmir: CAD. Qəbul olunan valyutalar: AZN, CNY, EUR, GBP, TRY, USD
+ M14  | PASS   | jurnalda NovaNest və naməlum mağaza hadisəsi yoxdur                                                     | 
+ M15  | PASS   | işçi listinq qiymət tarixçəsini görür                                                                   | 
+ M15  | PASS   | tarixçə yalnız icazəli sütunları qaytarır                                                               | 
+ M15  | PASS   | sifariş sətri tarixçəsi maya/refund/təchizatçı sahələrini göstərir                                      | 
+ M15  | PASS   | naməlum obyekt üçün tarixçə boşdur                                                                      | 
+ M15  | PASS   | Y7: işçi mağaza vəziyyətini görür (vaxt + xəta sayı)                                                    | 
+ M15  | PASS   | Y7: xətalı hadisə sayı 1                                                                                | 
+ M15  | PASS   | müşahidəçi də tarixçəni və vəziyyəti görür                                                              | 
+ M16  | PASS   | işçi öz kalkulyator parametrlərini saxlayır                                                             | 
+ M16  | PASS   | başqasının adına parametr saxlamaq olmur                                                                | rejected: 42501 new row violates row-level security policy for table "marketplace_calc_prefs"
+ M16  | PASS   | 4 KB-dan böyük parametr rədd edilir                                                                     | rejected: 23514 new row for relation "marketplace_calc_prefs" violates check constraint "marketplace_calc_
+ M16  | PASS   | müşahidəçi də öz parametrlərini saxlayır                                                                | 
+ M16  | PASS   | hər kəs yalnız öz sətrini görür                                                                         | 
+ M16  | PASS   | başqasının sətrini dəyişmək olmur                                                                       | 
+ M16  | PASS   | admin komissiya faizini dəyişir                                                                         | 
+ M16  | PASS   | menecer parametrləri dəyişə bilmir                                                                      | 0 row(s) affected
+ M16  | PASS   | parametrlərdə son dəyişən admin kimi qeyd olunur                                                        | 
+ M17  | PASS   | listinq qiymət dəyişikliyi audit jurnalındadır                                                          | 
+ M17  | PASS   | server idxalı audit jurnalındadır (aktor boş = sistem)                                                  | 
+ M17  | PASS   | parametr dəyişikliyi audit jurnalındadır                                                                | 
+ M17  | PASS   | kalkulyator parametrləri audit-ə yazılmır (şəxsi ayar)                                                  | 
+ M17  | PASS   | Y16: yeni cədvəllərdən auth.users-ə FK yoxdur (istifadəçi silinsə məlumat itmir)                        | 
+ passed | failed | groups 
+    303 |      0 |     18

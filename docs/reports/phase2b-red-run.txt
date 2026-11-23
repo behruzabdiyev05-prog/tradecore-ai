@@ -1,0 +1,1102 @@
+NOTICE:  database "t" does not exist, skipping
+── Phase 2B tests on the schema WITHOUT the 2B migrations (expected to FAIL)
+psql:/home/claude/tradecore-ai/tests/sql/phase2b_tests.sql:10: NOTICE:  schema "t2b" does not exist, skipping
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ no_effect 
+-----------
+ 
+(1 row)
+
+ no_effect 
+-----------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ no_effect 
+-----------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ allows 
+--------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ allows 
+--------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ allows 
+--------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ no_effect 
+-----------
+ 
+(1 row)
+
+ no_effect 
+-----------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ no_effect 
+-----------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ allows 
+--------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ allows 
+--------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ no_effect 
+-----------
+ 
+(1 row)
+
+ allows 
+--------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ no_effect 
+-----------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ allows 
+--------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ no_effect 
+-----------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ allows 
+--------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ allows 
+--------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ no_effect 
+-----------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ no_effect 
+-----------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ allows 
+--------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ allows 
+--------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ allows 
+--------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ allows 
+--------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ allows 
+--------
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ allows 
+--------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ as_user 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ rejects 
+---------
+ 
+(1 row)
+
+ ok 
+----
+ 
+(1 row)
+
+ #  | result |                                      name                                       |                                                                     detail                                                                      
+----+--------+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------
+  0 | PASS   | setup: teams via invites                                                        | 
+  0 | FAIL   | setup: notifications via notify()                                               | function public.notify(uuid, uuid, unknown, unknown, unknown, unknown, unknown, unknown, unknown) does not exist
+  0 | PASS   | new SECURITY DEFINER functions pin search_path                                  | 
+  0 | PASS   | anon cannot execute any SECURITY DEFINER function                               | 
+  0 | FAIL   | clients cannot execute notify()                                                 | 
+  0 | FAIL   | new tables have RLS on                                                          | 
+  0 | FAIL   | notifications published to Realtime                                             | 
+  0 | FAIL   | anon reads notifications                                                        | wrong error 42P01: relation "public.notifications" does not exist
+  0 | FAIL   | anon reads notification_preferences                                             | wrong error 42P01: relation "public.notification_preferences" does not exist
+  0 | FAIL   | anon calls global_search                                                        | wrong error 42883: function public.global_search(unknown, unknown) does not exist
+  0 | PASS   | anon reads no storage objects                                                   | 
+ 25 | FAIL   | employee sees own notification                                                  | 
+ 25 | FAIL   | employee sees no notification of another member                                 | 
+ 25 | FAIL   | employee sees no notification of org Q                                          | 
+ 25 | FAIL   | org Q owner sees no notification of org P                                       | 
+ 25 | FAIL   | unread_notification_count counts only own                                       | 
+ 26 | FAIL   | direct insert into notifications                                                | wrong error 42P01: relation "public.notifications" does not exist
+ 26 | FAIL   | direct insert of own notification                                               | wrong error 42P01: relation "public.notifications" does not exist
+ 26 | FAIL   | client cannot call notify()                                                     | wrong error 42883: function public.notify(unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown) does not exist
+ 27 | FAIL   | update other member's notification                                              | wrong error 42P01: relation "public.notifications" does not exist
+ 27 | FAIL   | delete other member's notification                                              | wrong error 42P01: relation "public.notifications" does not exist
+ 27 | FAIL   | mark_notifications_read on other's id affects 0                                 | 
+ 27 | FAIL   | mark_notifications_read on own id affects 1                                     | 
+ 27 | FAIL   | delete own notification (no delete right)                                       | wrong error 42P01: relation "public.notifications" does not exist
+ 27 | FAIL   | admin notification still unread                                                 | 
+ 28 | FAIL   | external https link                                                             | wrong error 42883: function public.notify(unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown) does not exist
+ 28 | FAIL   | javascript: link                                                                | wrong error 42883: function public.notify(unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown) does not exist
+ 28 | FAIL   | protocol-relative //host link                                                   | wrong error 42883: function public.notify(unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown) does not exist
+ 28 | FAIL   | backslash link                                                                  | wrong error 42883: function public.notify(unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown) does not exist
+ 28 | FAIL   | internal link accepted                                                          | 
+ 29 | PASS   | setup: user joins org Q                                                         | 
+ 29 | FAIL   | Q owner got invite.accepted for the new member                                  | 
+ 29 | FAIL   | P owner got nothing about org Q                                                 | 
+ 29 | FAIL   | P admin got nothing about org Q                                                 | 
+ 29 | PASS   | owner changes viewer → employee                                                 | 
+ 29 | FAIL   | viewer got member.role_changed in org P                                         | 
+ 29 | PASS   | restore viewer role                                                             | 
+ 30 | FAIL   | admin disables member.joined in org P                                           | 42P01: relation "public.notification_preferences" does not exist
+ 30 | PASS   | setup: new member joins org P                                                   | 
+ 30 | FAIL   | admin (disabled) got no member.joined                                           | 
+ 30 | FAIL   | admin did get member.joined before switching it off                             | 
+ 30 | FAIL   | owner (inviter) got invite.accepted                                             | 
+ 30 | FAIL   | employee (no members.manage) got no member.joined                               | 
+ 30 | FAIL   | suspended member gets no notification                                           | 
+ 31 | FAIL   | insert preference for another user                                              | wrong error 42P01: relation "public.notification_preferences" does not exist
+ 31 | FAIL   | insert preference for an org you are not in                                     | wrong error 42P01: relation "public.notification_preferences" does not exist
+ 31 | FAIL   | update another user's preference                                                | wrong error 42P01: relation "public.notification_preferences" does not exist
+ 31 | FAIL   | delete another user's preference                                                | wrong error 42P01: relation "public.notification_preferences" does not exist
+ 31 | FAIL   | preferences of others are invisible                                             | 
+ 31 | FAIL   | admin preference unchanged                                                      | 
+ 32 | FAIL   | search in own org finds "Şəhər Market"                                          | 
+ 32 | FAIL   | search "Gizli" in org P returns nothing                                         | 
+ 32 | FAIL   | search in org Q (not a member) returns nothing                                  | 
+ 32 | FAIL   | search in org Q with a broad term returns nothing                               | 
+ 32 | FAIL   | Q member: search in org P returns nothing                                       | 
+ 32 | FAIL   | Q member: search in own org works                                               | 
+ 32 | FAIL   | az_fold: "seher" finds "Şəhər Market"                                           | 
+ 32 | FAIL   | typo: "Şəhər Markte" still finds it                                             | 
+ 32 | FAIL   | product by SKU                                                                  | 
+ 32 | FAIL   | member by name (members.read)                                                   | 
+ 32 | FAIL   | own notification by title                                                       | 
+ 32 | FAIL   | every result has an internal link                                               | 
+ 32 | FAIL   | nobody else's notifications in search                                           | 
+ 33 | FAIL   | role without data.read / members.read finds nothing                             | 
+ 33 | FAIL   | suspended member finds nothing                                                  | 
+ 33 | FAIL   | every search result is visible to that user via RLS (8 users)                   | 0/-1 (results/not visible)
+ 33 | FAIL   | saved item of a module outside the plan is not found                            | 
+ 33 | FAIL   | with a reduced plan: results still match RLS                                    | 0/-1
+ 34 | FAIL   | "%" is a literal, not a wildcard                                                | 
+ 34 | FAIL   | "_" is a literal, not a wildcard                                                | 
+ 34 | FAIL   | quote does not break the query                                                  | 
+ 34 | FAIL   | backslash does not break the query                                              | 
+ 34 | FAIL   | 10 000-character query: no error, bounded                                       | 
+ 34 | FAIL   | limit 100 000 is capped at 50                                                   | 
+ 34 | FAIL   | 1-character query returns nothing                                               | 
+ 34 | FAIL   | NULL query returns nothing                                                      | 
+ 34 | FAIL   | negative limit returns nothing                                                  | 
+ 35 | FAIL   | 5 searches over 30k rows, each < 300 ms                                         | slowest 1000000000.0 ms
+ 36 | PASS   | update another user's profile                                                   | 0 row(s) affected
+ 36 | FAIL   | write active_org_id directly (own profile)                                      | statement was ALLOWED: update public.profiles set active_org_id = 'c2ae88f5-6bdd-46bc-aecf-3ff191a9994a' where id = 'e0000000-0000-0000-0000-00
+ 36 | FAIL   | write active_org_id directly (own org)                                          | statement was ALLOWED: update public.profiles set active_org_id = 'd9eb1ca4-7d1d-42be-b468-0f964e5d5df7' where id = 'e0000000-0000-0000-0000-00
+ 36 | PASS   | switch_org to a foreign org                                                     | rejected: 42501
+ 36 | FAIL   | update own name, phone, job title, locale                                       | 42703: column "phone" of relation "profiles" does not exist
+ 36 | FAIL   | invalid locale                                                                  | statement was ALLOWED: update public.profiles set locale = 'xx' where id = 'e0000000-0000-0000-0000-000000000003'
+ 36 | FAIL   | invalid phone                                                                   | wrong error 42703: column "phone" of relation "profiles" does not exist
+ 36 | FAIL   | avatar path outside own folder                                                  | wrong error 42703: column "avatar_path" of relation "profiles" does not exist
+ 36 | FAIL   | avatar path inside own folder                                                   | 42703: column "avatar_path" of relation "profiles" does not exist
+ 36 | PASS   | insert a profile row                                                            | rejected: 42501
+ 36 | PASS   | delete own profile                                                              | 0 row(s) affected
+ 37 | FAIL   | valid preferences                                                               | 42703: column "preferences" of relation "profiles" does not exist
+ 37 | FAIL   | unknown key                                                                     | wrong error 42703: column "preferences" of relation "profiles" does not exist
+ 37 | FAIL   | invalid value                                                                   | wrong error 42703: column "preferences" of relation "profiles" does not exist
+ 37 | FAIL   | wrong type (array)                                                              | wrong error 42703: column "preferences" of relation "profiles" does not exist
+ 37 | FAIL   | larger than 8 KB                                                                | wrong error 42703: column "preferences" of relation "profiles" does not exist
+ 38 | FAIL   | employee (no org.manage) edits org details                                      | wrong error 42703: column "legal_name" of relation "organizations" does not exist
+ 38 | FAIL   | admin edits org details                                                         | 42703: column "legal_name" of relation "organizations" does not exist
+ 38 | FAIL   | VÖEN with 9 digits                                                              | wrong error 42703: column "tax_id" of relation "organizations" does not exist
+ 38 | FAIL   | VÖEN with letters                                                               | wrong error 42703: column "tax_id" of relation "organizations" does not exist
+ 38 | FAIL   | website with javascript:                                                        | wrong error 42703: column "website" of relation "organizations" does not exist
+ 38 | FAIL   | invalid company email                                                           | wrong error 42703: column "email" of relation "organizations" does not exist
+ 38 | FAIL   | logo path of another org                                                        | wrong error 42703: column "logo_path" of relation "organizations" does not exist
+ 38 | FAIL   | write mfa_required_roles directly                                               | wrong error 42703: column "mfa_required_roles" of relation "organizations" does not exist
+ 38 | FAIL   | owner of org Q edits org P                                                      | wrong error 42703: column "legal_name" of relation "organizations" does not exist
+ 39 | FAIL   | admin sets security policy                                                      | wrong error 42883: function public.set_security_policy(unknown, text[]) does not exist
+ 39 | FAIL   | owner of another org sets policy                                                | wrong error 42883: function public.set_security_policy(unknown, text[]) does not exist
+ 39 | FAIL   | unknown role in policy                                                          | wrong error 42883: function public.set_security_policy(unknown, text[]) does not exist
+ 39 | FAIL   | owner without 2FA cannot require 2FA for own role (lock-out guard)              | wrong error 42883: function public.set_security_policy(unknown, text[]) does not exist
+ 40 | FAIL   | buckets are private, 2 MB, images only                                          | 
+ 40 | FAIL   | upload own avatar                                                               | 42501: new row violates row-level security policy for table "objects"
+ 40 | PASS   | upload into another user's avatar folder                                        | rejected: 42501
+ 40 | PASS   | upload avatar at bucket root                                                    | rejected: 42501
+ 40 | PASS   | employee uploads org logo (no org.manage)                                       | rejected: 42501
+ 40 | FAIL   | admin uploads org logo                                                          | 42501: new row violates row-level security policy for table "objects"
+ 40 | PASS   | owner of Q writes a logo into org P                                             | rejected: 42501
+ 40 | PASS   | owner of Q cannot read org P logo                                               | 
+ 40 | PASS   | owner of Q cannot read P member avatars                                         | 
+ 40 | PASS   | owner of Q deletes org P logo                                                   | 0 row(s) affected
+ 40 | FAIL   | member of P reads P logo and colleague avatar                                   | 
+ 40 | PASS   | member deletes colleague avatar                                                 | 0 row(s) affected
+ 40 | PASS   | delete own avatar                                                               | 
+ 41 | FAIL   | owner requires 2FA for employees                                                | 42883: function public.set_security_policy(unknown, text[]) does not exist
+ 41 | FAIL   | employee with aal1: companies hidden                                            | 
+ 41 | FAIL   | employee with aal1: notifications hidden                                        | 
+ 41 | FAIL   | employee with aal1: search empty                                                | 
+ 41 | FAIL   | employee with aal1: search matches RLS (nothing)                                | 
+ 41 | FAIL   | employee with aal1: check_access = mfa_required                                 | 
+ 41 | FAIL   | employee with aal1: gate reports 2FA required                                   | 
+ 41 | PASS   | employee with aal1 may still switch to the org (to see the 2FA screen)          | 
+ 41 | PASS   | employee with aal2: companies visible                                           | 
+ 41 | PASS   | employee with aal2: check_access = ok                                           | 
+ 41 | FAIL   | employee with aal2: gate reports ok                                             | 
+ 41 | PASS   | viewer (role not in policy) with aal1: data visible                             | 
+ 41 | FAIL   | viewer was notified: security.policy_changed                                    | 
+ 41 | FAIL   | the owner who changed it is not notified                                        | 
+ 41 | FAIL   | owner with 2FA may require it for owners too                                    | 42883: function public.set_security_policy(unknown, text[]) does not exist
+ 41 | FAIL   | owner with aal1 is now locked out of data                                       | 
+ 41 | FAIL   | owner with aal1 cannot switch the policy off (no bypass with a stolen password) | wrong error 42883: function public.set_security_policy(unknown, text[]) does not exist
+ 41 | FAIL   | a member whose role is in the policy cannot change it either (not owner)        | wrong error 42883: function public.set_security_policy(unknown, text[]) does not exist
+ 41 | FAIL   | policy can be switched off again                                                | 42883: function public.set_security_policy(unknown, text[]) does not exist
+ 41 | PASS   | after switching off: aal1 sees data again                                       | 
+ 42 | PASS   | employee creates a company                                                      | 
+ 42 | FAIL   | my_activity returns own rows                                                    | 
+ 42 | PASS   | employee still cannot read the full audit log                                   | 
+ 42 | PASS   | my_activity for a foreign org returns nothing                                   | 
+ 42 | FAIL   | admin's feed does not contain the employee's company                            | 
+ 42 | FAIL   | limit is capped at 100                                                          | 
+ 42 | FAIL   | every row in the employee's feed is the employee's own, in org P                | 
+ 42 | FAIL   | the feed includes all own actions in org P                                      | 
+
+ passed | failed | scenarios 
+--------+--------+-----------
+     29 |    119 |        18
+
+psql:/home/claude/tradecore-ai/tests/sql/phase2b_tests.sql:625: ERROR:  PHASE 2B TESTS FAILED: 119 failing check(s)
+CONTEXT:  PL/pgSQL function inline_code_block line 3 at RAISE
+RED RUN: tests failed as expected
+exit=0
